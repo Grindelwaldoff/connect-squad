@@ -85,5 +85,5 @@ python3 manage.py runserver
 * CSS3
 
 ### Разработчики данной версии:
-Бэкенд - Всеволод Рыбник tg: @Grindelwaldoff
-Фронтенд - |Kodam| tg: @I_Kodam
+• Бэкенд - Всеволод Рыбник tg: @Grindelwaldoff
+• Фронтенд - |Kodam| tg: @I_Kodam
