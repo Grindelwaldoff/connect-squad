@@ -1,0 +1,273 @@
+<form class="goods-form goods-tg-form" method="get" id="acc-filter-form">
+    <div class="goods-form__container">
+        <div class="goods-form__column">
+            <div class="goods-form__inner">
+                <div class="goods-form__price form-tabel --margin">
+                    <div class="area-inner form-tabel-item">
+                        <span></span>
+                        <input type="number" placeholder="Цена от" class="goods-form__input-price all-input" name='price_min'>
+                        <p class="price-acc" id="rub">₽</p>
+                    </div>
+
+                    <div class="area-inner form-tabel-item">
+                        <span></span>
+                        <input type="number" placeholder="До" class="goods-form__input-price all-input" name='price_max'>
+                        <p class="price-acc" id="rub">₽</p>
+                    </div>
+                </div>
+                <div class="--margin all-select-container area-inner">
+                    <button class="goods-form__select all-select select-all-area select-no-multiple-choice --no-submit" data-select="'select-all-area"><input type="text" data-id="1" name="gender" class="input-hidden" value=""><p class="select-all-item">Пол</p></button>
+                    <ul class="select-all-list">
+                        <li class="select-all-list__item --add-name --dropdown-close" data-name="gender" data-id="1">Пол</li>
+                        <li class="select-all-list__item" data-item-value="man" data-name="gender" data-id="2">Мужской</li>
+                        <li class="select-all-list__item" data-item-value="woman" data-name="gender" data-id="3">Женский</li>
+                    </ul>
+                </div>
+                <div class="goods-form__subscribers form-tabel --margin">
+                    <div class="area-inner form-tabel-item">
+                        <span></span>
+                        <input type="number" placeholder="Возраст от" class="goods-form__input-subscribers all-input" name="age_min">
+                    </div>
+
+                    <div class="area-inner form-tabel-item">
+                        <span></span>
+                        <input type="number" placeholder="Возраст до" class="goods-form__input-subscribers all-input" name="age_max">
+                    </div>
+                </div>
+                <div class="goods-form__subscribers form-tabel --margin">
+                    <div class="area-inner form-tabel-item">
+                        <span></span>
+                        <input type="number" placeholder="Голосов от" class="goods-form__input-subscribers all-input" name="votes_min">
+                    </div>
+
+                    <div class="area-inner form-tabel-item">
+                        <span></span>
+                        <input type="number" placeholder="Голосов до" class="goods-form__input-subscribers all-input" name="votes_max">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="goods-form__column">
+            <div class="goods-form__inner">
+                <div class="goods-form__id-search area-inner --margin">
+                    <span></span>
+                    <input type="text" placeholder="Поиск по заголовку" class="goods-form__id-search-input all-input">
+                </div>
+                <div class="gods-form__container --margin">
+                    <div class="goods-form__subscribers form-tabel --margin">
+                        <div class="area-inner form-tabel-item">
+                            <span></span>
+                            <input type="number" placeholder="Подписчиков от" class="goods-form__input-subscribers all-input" name="subs_min">
+                        </div>
+
+                        <div class="area-inner form-tabel-item">
+                            <span></span>
+                            <input type="number" placeholder="Подписчиков до" class="goods-form__input-subscribers all-input" name="subs_max">
+                        </div>
+                    </div>
+                    <div class="goods-form__subscribers form-tabel --margin">
+                        <div class="area-inner form-tabel-item">
+                            <span></span>
+                            <input type="number" placeholder="Групп от" class="goods-form__input-subscribers all-input" name="groups_min">
+                        </div>
+
+                        <div class="area-inner form-tabel-item">
+                            <span></span>
+                            <input type="number" placeholder="Групп до" class="goods-form__input-subscribers all-input" name="groups_max">
+                        </div>
+                    </div>
+                    <div class="goods-form__subscribers form-tabel --margin">
+                        <div class="area-inner form-tabel-item">
+                            <span></span>
+                            <input type="number" placeholder="Друзей от" class="goods-form__input-subscribers all-input" name="friends_min">
+                        </div>
+
+                        <div class="area-inner form-tabel-item">
+                            <span></span>
+                            <input type="number" placeholder="Друзей до" class="goods-form__input-subscribers all-input" name="friends_max">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="goods-form__column">
+            <div class="goods-form__inner">
+                <div class="goods-form__button-submit --margin">
+                    <button class="goods-form__button-submit-btn" type="submit">
+                        Показать ~ <span class="goods-form__button-submit-span">{{ filter.qs.count }}</span> аккаунтов
+                    </button>
+                </div>
+                <div class="goods-form__country area-inner all-select-container --margin">
+                    <button class="goods-form__select all-select all-select__country select-all-area">
+                        Страна
+                    </button>
+                    <ul class="select-all-list">
+                        <li class="select-all-list__item --dropdown-close" data-name="Страна">Не важно</li>
+                        {% comment %} <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">о-в Вознесения</li>
+                        <li class="select-all-list__item" data-item-value="andora" data-item-name="country">Андорра</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">ОАЭ</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Афганистан</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Антигуа и Барбуда</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Ангилья</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Албания</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Армения</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Ангола</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Аргентина</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Американское Самоа</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Австрия</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Австралия</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Аруба</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Аландские о-ва</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Азербайджан</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Босния и Герцеговина</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Барбадос</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Бангладеш</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Бельгия</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Буркина-Фасо</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Болгария</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Бахрейн</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Бурунди</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Бенин</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Сен-Бартелеми</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Бермудские о-ва</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Бруней-Даруссалам</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Беларусь</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Боливия</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Бонэйр, Синт-Эстатиус и Саба</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Болгария</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Грузия</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Дания</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Египет</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Израиль</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Индия</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Индонезия</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Ирландия</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Испания</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Италия</li> {% endcomment %}
+                        <li class="select-all-list__item" data-item-value="KZ" data-item-name="country">Казахстан</li>
+                        {% comment %} <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Канада</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Кипр</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Киргизия</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Китай</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Корея</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Латвия</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Литва</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Люксембург</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Мексика</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Нидерланды</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Новая Зеландия</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Норвегия</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">ОАЭ</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Польша</li> {% endcomment %}
+                        <li class="select-all-list__item" data-item-value="RU" data-item-name="country">Россия</li>
+                        {% comment %} <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Румыния</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Саудовская Аравия</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Сербия</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Сингапур</li> {% endcomment %}
+                        <li class="select-all-list__item" data-item-value="US" data-item-name="country">США</li>
+                        {% comment %} <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Таджикистан</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Таиланд</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Финляндия</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Франция</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Хорватия</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Чехия</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Швеция</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Эстония</li>
+                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Япония</li> {% endcomment %}
+                    </ul>
+                </div>
+                <div class="goods-form__country area-inner all-select-container --margin">
+                    <button class="goods-form__select all-select all-select__country select-all-area">
+                        Страна номера
+                    </button>
+                    <ul class="select-all-list">
+                        <li class="select-all-list__item --dropdown-close" data-name="Страна номера">Не важно</li>
+                        <li class="select-all-list__item" data-item-value="RU" data-item-name="country_phone_code">Россия +7</li>
+                        <li class="select-all-list__item" data-item-value="country_phone_code_value" data-item-name="country_phone_code">Казахстан +77</li>
+                        <li class="select-all-list__item" data-item-value="country_phone_code_value" data-item-name="country_phone_code">Украина +380</li>
+                        <li class="select-all-list__item" data-item-value="country_phone_code_value" data-item-name="country_phone_code">Беларусь +375</li>
+                        <li class="select-all-list__item" data-item-value="country_phone_code_value" data-item-name="country_phone_code">Великобритания +44</li>
+                        <li class="select-all-list__item" data-item-value="country_phone_code_value" data-item-name="country_phone_code">США, Канада +1</li>
+                        <li class="select-all-list__item" data-item-value="country_phone_code_value" data-item-name="country_phone_code">Китай +86</li>
+                        <li class="select-all-list__item" data-item-value="country_phone_code_value" data-item-name="country_phone_code">Индонезия +62</li>
+                        <li class="select-all-list__item" data-item-value="country_phone_code_value" data-item-name="country_phone_code">Турция +90</li>
+                        <li class="select-all-list__item" data-item-value="country_phone_code_value" data-item-name="country_phone_code">Индия +91</li>
+                        <li class="select-all-list__item" data-item-value="country_phone_code_value" data-item-name="country_phone_code">Пакистан +92</li>
+                        <li class="select-all-list__item" data-item-value="country_phone_code_value" data-item-name="country_phone_code">Франция +33</li>
+                        <li class="select-all-list__item" data-item-value="country_phone_code_value" data-item-name="country_phone_code">Таиланд +66</li>
+                        <li class="select-all-list__item" data-item-value="country_phone_code_value" data-item-name="country_phone_code">Польша +48</li>
+                        <li class="select-all-list__item" data-item-value="country_phone_code_value" data-item-name="country_phone_code">Румыния +40</li>
+                        <li class="select-all-list__item" data-item-value="country_phone_code_value" data-item-name="country_phone_code">Германия +49</li>
+                        <li class="select-all-list__item" data-item-value="country_phone_code_value" data-item-name="country_phone_code">Литва +370</li>
+                        <li class="select-all-list__item" data-item-value="country_phone_code_value" data-item-name="country_phone_code">Латвия +371</li>
+                        <li class="select-all-list__item" data-item-value="country_phone_code_value" data-item-name="country_phone_code">Эстония +372</li>
+                        <li class="select-all-list__item" data-item-value="country_phone_code_value" data-item-name="country_phone_code">Молдавия +373</li>
+                        <li class="select-all-list__item" data-item-value="country_phone_code_value" data-item-name="country_phone_code">Армения +374</li>
+                        <li class="select-all-list__item" data-item-value="country_phone_code_value" data-item-name="country_phone_code">ОАЭ +971</li>
+                        <li class="select-all-list__item" data-item-value="country_phone_code_value" data-item-name="country_phone_code">Бразилия +55</li>
+                        <li class="select-all-list__item" data-item-value="country_phone_code_value" data-item-name="country_phone_code">Аргентина +54</li>
+                        <li class="select-all-list__item" data-item-value="country_phone_code_value" data-item-name="country_phone_code">Эфиопия +251</li>
+                        <li class="select-all-list__item" data-item-value="country_phone_code_value" data-item-name="country_phone_code">Кения +254</li>
+                        <li class="select-all-list__item" data-item-value="country_phone_code_value" data-item-name="country_phone_code">Филиппины +63</li>
+                        <li class="select-all-list__item" data-item-value="country_phone_code_value" data-item-name="country_phone_code">Сингапур +65</li>
+                        <li class="select-all-list__item" data-item-value="country_phone_code_value" data-item-name="country_phone_code">Доминиканская республика +1809</li>
+                        <li class="select-all-list__item" data-item-value="country_phone_code_value" data-item-name="country_phone_code">ЮАР +27</li>
+                    </ul>
+                </div>
+                <div class="goods-form__country area-inner all-select-container --margin">
+                    <button class="goods-form__select all-select all-select__country select-all-area">
+                        Исключить страну номера
+                    </button>
+                    <ul class="select-all-list">
+                        <li class="select-all-list__item --dropdown-close" data-name="Исключить страну номера">Не важно</li>
+                        <li class="select-all-list__item" data-item-value="country_code_phone_value" data-item-name="exclude_country_phone_code">Россия +7</li>
+                        <li class="select-all-list__item" data-item-value="country_code_phone_value" data-item-name="exclude_country_phone_code">Казахстан +77</li>
+                        <li class="select-all-list__item" data-item-value="country_code_phone_value" data-item-name="exclude_country_phone_code">Украина +380</li>
+                        <li class="select-all-list__item" data-item-value="country_code_phone_value" data-item-name="exclude_country_phone_code">Беларусь +375</li>
+                        <li class="select-all-list__item" data-item-value="country_code_phone_value" data-item-name="exclude_country_phone_code">Великобритания +44</li>
+                        <li class="select-all-list__item" data-item-value="country_code_phone_value" data-item-name="exclude_country_phone_code">США, Канада +1</li>
+                        <li class="select-all-list__item" data-item-value="country_code_phone_value" data-item-name="exclude_country_phone_code">Китай +86</li>
+                        <li class="select-all-list__item" data-item-value="country_code_phone_value" data-item-name="exclude_country_phone_code">Индонезия +62</li>
+                        <li class="select-all-list__item" data-item-value="country_code_phone_value" data-item-name="exclude_country_phone_code">Турция +90</li>
+                        <li class="select-all-list__item" data-item-value="country_code_phone_value" data-item-name="exclude_country_phone_code">Индия +91</li>
+                        <li class="select-all-list__item" data-item-value="country_code_phone_value" data-item-name="exclude_country_phone_code">Пакистан +92</li>
+                        <li class="select-all-list__item" data-item-value="country_code_phone_value" data-item-name="exclude_country_phone_code">Франция +33</li>
+                        <li class="select-all-list__item" data-item-value="country_code_phone_value" data-item-name="exclude_country_phone_code">Таиланд +66</li>
+                        <li class="select-all-list__item" data-item-value="country_code_phone_value" data-item-name="exclude_country_phone_code">Польша +48</li>
+                        <li class="select-all-list__item" data-item-value="country_code_phone_value" data-item-name="exclude_country_phone_code">Румыния +40</li>
+                        <li class="select-all-list__item" data-item-value="country_code_phone_value" data-item-name="exclude_country_phone_code">Германия +49</li>
+                        <li class="select-all-list__item" data-item-value="country_code_phone_value" data-item-name="exclude_country_phone_code">Литва +370</li>
+                        <li class="select-all-list__item" data-item-value="country_code_phone_value" data-item-name="exclude_country_phone_code">Латвия +371</li>
+                        <li class="select-all-list__item" data-item-value="country_code_phone_value" data-item-name="exclude_country_phone_code">Эстония +372</li>
+                        <li class="select-all-list__item" data-item-value="country_code_phone_value" data-item-name="exclude_country_phone_code">Молдавия +373</li>
+                        <li class="select-all-list__item" data-item-value="country_code_phone_value" data-item-name="exclude_country_phone_code">Армения +374</li>
+                        <li class="select-all-list__item" data-item-value="country_code_phone_value" data-item-name="exclude_country_phone_code">ОАЭ +971</li>
+                        <li class="select-all-list__item" data-item-value="country_code_phone_value" data-item-name="exclude_country_phone_code">Бразилия +55</li>
+                        <li class="select-all-list__item" data-item-value="country_code_phone_value" data-item-name="exclude_country_phone_code">Аргентина +54</li>
+                        <li class="select-all-list__item" data-item-value="country_code_phone_value" data-item-name="exclude_country_phone_code">Эфиопия +251</li>
+                        <li class="select-all-list__item" data-item-value="country_code_phone_value" data-item-name="exclude_country_phone_code">Кения +254</li>
+                        <li class="select-all-list__item" data-item-value="country_code_phone_value" data-item-name="exclude_country_phone_code">Филиппины +63</li>
+                        <li class="select-all-list__item" data-item-value="country_code_phone_value" data-item-name="exclude_country_phone_code">Сингапур +65</li>
+                        <li class="select-all-list__item" data-item-value="country_code_phone_value" data-item-name="exclude_country_phone_code">Доминиканская республика +1809</li>
+                        <li class="select-all-list__item" data-item-value="country_code_phone_value" data-item-name="exclude_country_phone_code">ЮАР +27</li>
+                    </ul>
+                </div>
+                <div class="goods-form__country area-inner all-select-container --margin">
+                    <button class="goods-form__select all-select all-select__country select-all-area">
+                        Доступ к почте
+                    </button>
+                    <ul class="select-all-list">
+                        <li class="select-all-list__item --dropdown-close" data-name="Доступ к почте">Не важно</li>
+                        <li class="select-all-list__item" data-item-value="AUTO" data-item-name="mail">Авторег</li>
+                        <li class="select-all-list__item" data-item-value="ORIGINAL" data-item-name="mail">Родная</li>
+                        <li class="select-all-list__item" data-item-value="NO" data-item-name="mail">Без доступа к почте</li>
+                    </ul>
+                </div>
+                <div class="goods-form__acc-origin acc-origin-tg area-inner --margin">
+                    <span></span>
+                    <input type="text" placeholder="Почтовый домен" name="mail_domain" class="all-input">
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

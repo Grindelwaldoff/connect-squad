@@ -1,0 +1,250 @@
+<form class="goods-form goods-tg-form" action="#" method="get" id="acc-filter-form">
+    {% comment %} ДОбавить скрытый инпут, который будет содержать  <input type='hidden' value='{{ template }}'></input>{% endcomment %}
+    <div class="goods-form__container">
+        <div class="goods-form__column">
+            <div class="goods-form__inner">
+                <div class="goods-form__price form-tabel --margin">
+                    <div class="area-inner form-tabel-item">
+                        <span></span>
+                        <input type="number" form="acc-filter-form" placeholder="Цена от" name="price_min" class="goods-form__input-price all-input">
+                        <p class="price-acc" id="rub">₽</p>
+                    </div>
+
+                    <div class="area-inner form-tabel-item">
+                        <span></span>
+                        <input type="number" form="acc-filter-form" placeholder="До" name="price_max" class="goods-form__input-price all-input">
+                        <p class="price-acc" id="rub">₽</p>
+                    </div>
+                </div>
+                <div class="radio-box --margin">
+                    <h5 class="radio-box__title">Количество чатов</h5>
+                    <div class="goods-form__price form-tabel --margin">
+                        <div class="area-inner form-tabel-item">
+                            <span></span>
+                            <input type="number" form="acc-filter-form" placeholder="Каналов от" name="channels_min" class="goods-form__input-price all-input">
+                        </div>
+                        <div class="area-inner form-tabel-item">
+                            <span></span>
+                            <input type="number" form="acc-filter-form" placeholder="До"  name="channels_max" class="goods-form__input-price all-input">
+                        </div>
+                    </div>
+                    <div class="goods-form__price form-tabel --margin">
+                        <div class="area-inner form-tabel-item">
+                            <span></span>
+                            <input type="number" form="acc-filter-form" placeholder="Групп. чатов от" name="groups_min" class="goods-form__input-price all-input">
+
+                        </div>
+
+                        <div class="area-inner form-tabel-item">
+                            <span></span>
+                            <input type="number" form="acc-filter-form" placeholder="До" name="groups_max" class="goods-form__input-price all-input">
+
+                        </div>
+                    </div>
+                    <div class="goods-form__price form-tabel --margin">
+                        <div class="area-inner form-tabel-item">
+                            <span></span>
+                            <input type="number" form="acc-filter-form" placeholder="Переписок от" name="chats_min" class="goods-form__input-price all-input">
+
+                        </div>
+
+                        <div class="area-inner form-tabel-item">
+                            <span></span>
+                            <input type="number" form="acc-filter-form" form="acc-filter-form" placeholder="До" name="chats_max" value="" class="goods-form__input-price all-input">
+
+                        </div>
+                    </div>
+                    <div class="goods-form__price form-tabel --margin">
+                        <div class="area-inner form-tabel-item">
+                            <span></span>
+                            <input type="number" form="acc-filter-form" placeholder="Админ чатов от" name="admin_chats_min" class="goods-form__input-price all-input">
+
+                        </div>
+
+                        <div class="area-inner form-tabel-item">
+                            <span></span>
+                            <input type="number" form="acc-filter-form" placeholder="До" name="admin_chats_max" class="goods-form__input-price all-input">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="goods-form__column">
+            <div class="goods-form__inner">
+                <div class="goods-form__id-search area-inner radio-inner --margin">
+                    <span></span>
+                    <input type="search" form="acc-filter-form" placeholder="Поиск по заголовку, ID" class="goods-form__id-search-input all-input" name="search">
+                </div>
+                <div class="goods-form__country area-inner all-select-container --margin">
+                    <button class="goods-form__select all-select all-select__country select-all-area">
+                        Страна
+                    </button>
+                    <ul class="select-all-list">
+                        <li class="select-all-list__item --dropdown-close" data-name="Страна">Не важно</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">о-в Вознесения</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Андорра</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">ОАЭ</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Афганистан</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Антигуа и Барбуда</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Ангилья</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Албания</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Армения</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Ангола</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Аргентина</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Американское Самоа</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Австрия</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Австралия</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Аруба</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Аландские о-ва</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Азербайджан</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Босния и Герцеговина</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Барбадос</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Бангладеш</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Бельгия</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Буркина-Фасо</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Болгария</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Бахрейн</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Бурунди</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Бенин</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Сен-Бартелеми</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Бермудские о-ва</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Бруней-Даруссалам</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Беларусь</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Боливия</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Бонэйр, Синт-Эстатиус и Саба</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Болгария</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Грузия</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Дания</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Египет</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Израиль</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Индия</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Индонезия</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Ирландия</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Испания</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Италия</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Казахстан</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Канада</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Кипр</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Киргизия</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Китай</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Корея</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Латвия</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Литва</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Люксембург</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Мексика</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Нидерланды</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Новая Зеландия</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Норвегия</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">ОАЭ</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Польша</li>
+                        <li class="select-all-list__item"  data-item-value="RU" data-item-name="country">Россия</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Румыния</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Саудовская Аравия</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Сербия</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Сингапур</li>
+                        <li class="select-all-list__item"  data-item-value="US" data-item-name="country">США</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Таджикистан</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Таиланд</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Финляндия</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Франция</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Хорватия</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Чехия</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Швеция</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Эстония</li>
+                        <li class="select-all-list__item"  data-item-value="countryName" data-item-name="country">Япония</li>
+                    </ul>
+                </div>
+                
+        <div class="goods-form__resting-search area-inner --margin">
+            <span></span>
+            <input type="text" form="acc-filter-form" placeholder="Отлежка от, дней" class="goods-form__resting-search-input all-input" name='date_range'>
+        </div>
+        <div class="radio-box --margin">
+            <h5 class="radio-box__title">Premium подписка</h5>
+            <ul class="goods-form__list-premium radio-box-list">
+                <li class="goods-form__list-item area-inner --margin-l">
+                    <span></span>
+                    <input class="input-hidden" form="acc-filter-form" type="radio" id="tg_premium-1" checked name="premium" value="">
+                    <label for="tg_premium-1" class="goods-form__list-item-label all-input">Не важно</label>
+                </li>
+                <li class="goods-form__list-item area-inner --margin-l">
+                    <span></span>
+                    <input type="radio" form="acc-filter-form" class="input-hidden" id="tg_premium-2" name="premium" value="False">
+                    <label for="tg_premium-2" class="goods-form__list-item-label all-input">Нет</label>
+                </li>
+                <li class="goods-form__list-item area-inner --margin-l">
+                    <span></span>
+                    <input type="radio" form="acc-filter-form" class="input-hidden" id="tg_premium-3" name="premium" value="True">
+                    <label for="tg_premium-3" class="goods-form__list-item-label all-input">Да</label>
+                </li>
+            </ul>
+        </div>
+        {% if title == 'telegram' %}
+            <div class="radio-box --margin">
+                <h5 class="radio-box__title">Количество подписчиков в чатах</h5>
+                <div class="goods-form__price form-tabel --margin">
+                    <div class="area-inner form-tabel-item">
+                        <span></span>
+                        <input type="number" form="acc-filter-form" placeholder="От" class="goods-form__input-price all-input" name="chat_subs_min">
+                    </div>
+
+                    <div class="area-inner form-tabel-item">
+                        <span></span>
+                        <input type="number" form="acc-filter-form" placeholder="До" class="goods-form__input-price all-input" name="chat_subs_max">
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>
+<div class="goods-form__column">
+    <div class="goods-form__inner">
+        <div class="goods-form__button-submit --margin">
+            <button class="goods-form__button-submit-btn" form="acc-filter-form" type="submit">
+                Показать ~ <span class="goods-form__button-submit-span">{{ filter.qs.count }}</span> аккаунтов
+            </button>
+        </div>
+        <div class="radio-box --margin">
+            <h5 class="radio-box__title">Пароль на аккаунте</h5>
+            <ul class="goods-form__list-pass radio-box-list">
+                <li class="goods-form__list-item area-inner --margin-l">
+                    <span></span>
+                    <input class="input-hidden" form="acc-filter-form"  type="radio" id="tg_pass-1" name="password" checked value=''>
+                    <label for="tg_pass-1" class="goods-form__list-item-label radio all-input">Не важно</label>
+                </li>
+                <li class="goods-form__list-item area-inner --margin-l">
+                    <span></span>
+                    <input type="radio" form="acc-filter-form" class="input-hidden" id="tg_pass-2" name="password" value="False">
+                    <label for="tg_pass-2" class="goods-form__list-item-label all-input">Нет</label>
+                </li>
+                <li class="goods-form__list-item area-inner --margin-l">
+                    <span></span>
+                    <input type="radio" form="acc-filter-form" class="input-hidden" id="tg_pass-3" name="password" value="True">
+                    <label for="tg_pass-3" class="goods-form__list-item-label all-input">Да</label>
+                </li>
+            </ul>
+        </div>
+        <div class="radio-box --margin">
+            <h5 class="radio-box__title">Спамблок</h5>
+            <ul class="goods-form__list-spamblock radio-box-list">
+                <li class="goods-form__list-item area-inner --margin-l">
+                    <span></span>
+                    <input class="input-hidden" form="acc-filter-form" type="radio" id="tg_spam-1" name="spam_block" checked value=''>
+                    <label for="tg_spam-1" class="goods-form__list-item-label all-input">Не важно</label>
+                </li>
+                <li class="goods-form__list-item area-inner --margin-l">
+                    <span></span>
+                    <input type="radio" form="acc-filter-form" class="input-hidden" id="tg_spam-2" name="spam_block" value="False">
+                    <label for="tg_spam-2" class="goods-form__list-item-label all-input">Нет</label>
+                </li>
+                <li class="goods-form__list-item area-inner --margin-l">
+                    <span></span>
+                    <input type="radio" form="acc-filter-form" class="input-hidden" id="tg_spam-3" name="spam_block" value="True">
+                    <label for="tg_spam-3" class="goods-form__list-item-label all-input">Да</label>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+</form>

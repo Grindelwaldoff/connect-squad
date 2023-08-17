@@ -1,0 +1,293 @@
+    {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{% static 'css/nullstyle.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    {% include 'blocktemplates/headers/header.html' %}
+    <main class="main">
+        <div class="section-all section-goods">
+            <div class="container">
+                <div class="goods-advertising__img-container">
+                    <a href="#" class="goods-advertising__link">
+                        <img src="{% static 'images/advertising-img.jpg' %}" alt="" class="goods-advertising__img">
+                    </a>
+                </div>
+                <div class="refill__wrapper">
+                    <div class="title-wrapper title-wrapper-flext">
+                        <h2 class="refill__title">Настройки аккаунта</h2>
+                        <a href="#" class="acc-btn">Выйти из аккаунта</a>
+                    </div>
+                    <div class="refill__inner">
+                        <form class="refill__payment settings-column">
+                            <div class="refill__payment-wrapper refill-wrapper">
+                                <div class="settings__email">
+                                    <input class="settings__email-cрange" placeholder="Email:" type="text">
+                                    <button class="settings__email-cрange-btn">изменить email</button>
+                                </div>
+                                <div class="settings__pass">
+                                    <ul class="settings__pass pass__list">
+                                        <li class="pass__list-item">
+                                            <span class="pass__list-item-text">
+                                                Текущий пароль
+                                            </span>
+                                            <div class="pass-container container-hidden-value">
+                                                <input id="card" class="pass__list-input input-hidden-value" type="password" name="pay-card" value="" type="text">
+                                                <button class="pass-hidden hidden-btn-value"></button>
+                                            </div>
+                                        </li>
+                                        <li class="pass__list-item">
+                                            <span class="pass__list-item-text">
+                                                Новый пароль
+                                            </span>
+                                            <div class="pass-container container-hidden-value">
+                                                <input id="card-2" class="pass__list-input input-hidden-value" type="password" name="pay-card" value="" type="text">
+                                                <button class="pass-hidden hidden-btn-value"></button>
+                                            </div>
+                                        </li>
+                                        <li class="pass__list-item">
+                                            <span class="pass__list-item-text">
+                                                Повторите пароль
+                                            </span>
+                                            <div class="pass-container container-hidden-value">
+                                                <input id="card-3" class="pass__list-input input-hidden-value" type="password" name="pay-card" value="" type="text">
+                                                <button class="pass-hidden hidden-btn-value"></button>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <button class="settings-pass__save acc-btn">Сохранить</button>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="settings-column">
+                            <div class="settings__API settings-column-block refill-wrapper">
+                                <h5 class="settings__API-title title-min">
+                                    Ключ API
+                                </h5>
+                                <div class="settings__API-inner">
+                                    <div class="settings__API-area refill-inner container-hidden-value copy-parent">
+                                        <input type="password" class="settings__API-input input-hidden-value copy-area" value="43482478e562837463756746587436">
+                                        <div class="settings__API-btn-panel">
+                                            <div class="settings__API-btn-show hidden-btn-value">
+                                                <button class="settings__API-btn pass-hidden hidden-btn-value"></button>
+                                            </div>
+                                            <button class="settings__API-btn settings__API-btn-text copy-btn">Копировать</button>
+                                            <button class="settings__API-btn settings__API-btn-text">Сменить</button>
+                                        </div>
+
+                                    </div>
+                                    <div class="settings__API-text">
+                                        Не передавайте ключ API третьим лицам!
+                                    </div>
+                                </div>
+                            </div>
+                            <form class="settings-column-block refill-wrapper">
+                                <div class="settings__API-text settings__API-text-check">
+                                    Показывать дополнительную информацию в файле заказов
+                                    <input id="settings-check" class="settings__API-check-input" type="checkbox">
+                                    <label for="settings-check" class="settings__API-check"></label>
+                                </div>
+                                <button class="settings__save settings-pass__save acc-btn">Сохранить</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="accoants-tabs__container">
+                    <div class="accounts-tabs__inner">
+                        <ul class="accounts-tabs__list-button list-button">
+                            <li class="list-button__item">
+                                <button class="list-button__btn">Telegram</button>
+                            </li>
+                            <li class="list-button__item">
+                                <button class="list-button__btn">Instagram</button>
+                            </li>
+                            <li class="list-button__item">
+                                <button class="list-button__btn">VK</button>
+                            </li>
+                            <li class="list-button__item">
+                                <button class="list-button__btn">Ok</button>
+                            </li>
+                            <li class="list-button__item">
+                                <button class="list-button__btn">WhatsApp</button>
+                            </li>
+                        </ul>
+                        <div class="accounts-tabs__list-content-inner list-content__inner">
+                            <div class="accounts-tabs__list-content list-content">
+                                {% for item in telegram %}
+                                    <div class="accounts-tabs__list-content-item list-content__item">
+                                        <div class="list-content__item-column">
+                                            <div class="list-content__item-title">{{ item.name }}</div>
+                                            <div class="list-content__item-container">
+                                                <div class="list-content__item-img">
+                                                    <img src="{% static 'images/telegram-icon.png' %}" alt="" class="list-content__item-img">
+                                                </div>
+                                                <div class="list-content__item-number"><span class="list-content__item-number-size">{{ item.stock }}</span>шт.</div>
+                                            </div>
+                                        </div>
+                                        <div class="list-content__item-column column-flex">
+                                            <div class="list-content__item-inner">
+                                                <div class="list-content__item-price list-content__item-info">
+                                                    <span class="list-content__item-price-number">{{ item.price }}</span>
+                                                    <span class="list-content__item-price-currency"> ₽</span>
+                                                </div>
+                                                <div class="list-content__item-id list-content__item-info">{{ item.slug }}</div>
+                                            </div>
+                                            <div class="list-content__item-inner item-inner">
+                                                <div class="list-content__item-check">
+                                                    <input class="list-content__item-check-input input-hidden" name="acc-disabled" type="checkbox">
+                                                    <label class="list-content__item-check-label"></label>
+                                                </div>
+                                                <form action="{% url 'shop:product_del' %}">
+                                                    <input class="list-content__item-delete">
+                                                </input>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            <div class="accounts-tabs__list-content list-content">
+                                {% for item in instagram %}
+                                    <div class="accounts-tabs__list-content-item list-content__item">
+                                        <div class="list-content__item-column">
+                                            <div class="list-content__item-title">{{ item.name }}</div>
+                                            <div class="list-content__item-container">
+                                                <div class="list-content__item-img">
+                                                    <img src="{% static 'images/instagram-icon.png' %}" alt="" class="list-content__item-img">
+                                                </div>
+                                                <div class="list-content__item-number"><span class="list-content__item-number-size">{{ item.stock }}</span>шт.</div>
+                                            </div>
+                                        </div>
+                                        <div class="list-content__item-column column-flex">
+                                            <div class="list-content__item-inner">
+                                                <div class="list-content__item-price list-content__item-info">
+                                                    <span class="list-content__item-price-number">{{ item.price }}</span>
+                                                    <span class="list-content__item-price-currency"> ₽</span>
+                                                </div>
+                                                <div class="list-content__item-id list-content__item-info">{{ item.slug }}</div>
+                                            </div>
+                                            <div class="list-content__item-inner item-inner">
+                                                <div class="list-content__item-check">
+                                                    <input class="list-content__item-check-input input-hidden" name="acc-disabled" type="checkbox">
+                                                    <label class="list-content__item-check-label"></label>
+                                                </div>
+                                                <button class="list-content__item-delete">
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            <div class="accounts-tabs__list-content list-content">
+                                {% for item in vk %}
+                                    <div class="accounts-tabs__list-content-item list-content__item">
+                                        <div class="list-content__item-column">
+                                            <div class="list-content__item-title">{{ item.name }}</div>
+                                            <div class="list-content__item-container">
+                                                <div class="list-content__item-img">
+                                                    <img src="{% static 'images/vk-icon.png' %}" alt="" class="list-content__item-img">
+                                                </div>
+                                                <div class="list-content__item-number"><span class="list-content__item-number-size"></span>шт.</div>
+                                            </div>
+                                        </div>
+                                        <div class="list-content__item-column column-flex">
+                                            <div class="list-content__item-inner">
+                                                <div class="list-content__item-price list-content__item-info">
+                                                    <span class="list-content__item-price-number">{{ item.price }}</span>
+                                                    <span class="list-content__item-price-currency"> ₽</span>
+                                                </div>
+                                                <div class="list-content__item-id list-content__item-info">{{ item.slug }}</div>
+                                            </div>
+                                            <div class="list-content__item-inner item-inner">
+                                                <div class="list-content__item-check">
+                                                    <input class="list-content__item-check-input input-hidden" name="acc-disabled" type="checkbox">
+                                                    <label class="list-content__item-check-label"></label>
+                                                </div>
+                                                <button class="list-content__item-delete">
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            <div class="accounts-tabs__list-content list-content">
+                                {% for item in ok %}
+                                    <div class="accounts-tabs__list-content-item list-content__item">
+                                        <div class="list-content__item-column">
+                                            <div class="list-content__item-title">{{ item.name }}</div>
+                                            <div class="list-content__item-container">
+                                                <div class="list-content__item-img">
+                                                    <img src="{% static 'images/ok.png' %}" alt="" class="list-content__item-img">
+                                                </div>
+                                                <div class="list-content__item-number"><span class="list-content__item-number-size">{{ item.stock }}</span>шт.</div>
+                                            </div>
+                                        </div>
+                                        <div class="list-content__item-column column-flex">
+                                            <div class="list-content__item-inner">
+                                                <div class="list-content__item-price list-content__item-info">
+                                                    <span class="list-content__item-price-number">{{ item.price }}</span>
+                                                    <span class="list-content__item-price-currency"> ₽</span>
+                                                </div>
+                                                <div class="list-content__item-id list-content__item-info">{{ item.slug }}</div>
+                                            </div>
+                                            <div class="list-content__item-inner item-inner">
+                                                <div class="list-content__item-check">
+                                                    <input class="list-content__item-check-input input-hidden" name="acc-disabled" type="checkbox">
+                                                    <label class="list-content__item-check-label"></label>
+                                                </div>
+                                                {% comment %} <form action="{% url 'shop:product_delete' slug=item.slug %}"> {% endcomment %}
+                                                    <button class="list-content__item-delete">
+                                                    </button>
+                                                {% comment %} </form> {% endcomment %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            <div class="accounts-tabs__list-content list-content">
+                                {% for item in whatsapp %}
+                                    <div class="accounts-tabs__list-content-item list-content__item">
+                                        <div class="list-content__item-column">
+                                            <div class="list-content__item-title">{{ item.name }}</div>
+                                            <div class="list-content__item-container">
+                                                <div class="list-content__item-img">
+                                                    <img src="{% static 'images/telegram-icon.png' %}" alt="" class="list-content__item-img">
+                                                </div>
+                                                <div class="list-content__item-number"><span class="list-content__item-number-size">{{ item.stock }}</span>шт.</div>
+                                            </div>
+                                        </div>
+                                        <div class="list-content__item-column column-flex">
+                                            <div class="list-content__item-inner">
+                                                <div class="list-content__item-price list-content__item-info">
+                                                    <span class="list-content__item-price-number">{{ item.price }}</span>
+                                                    <span class="list-content__item-price-currency"> ₽</span>
+                                                </div>
+                                                <div class="list-content__item-id list-content__item-info">{{ item.slug }}</div>
+                                            </div>
+                                            <div class="list-content__item-inner item-inner">
+                                                <div class="list-content__item-check">
+                                                    <input class="list-content__item-check-input input-hidden" name="acc-disabled" type="checkbox">
+                                                    <label class="list-content__item-check-label"></label>
+                                                </div>
+                                                <button class="list-content__item-delete">
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

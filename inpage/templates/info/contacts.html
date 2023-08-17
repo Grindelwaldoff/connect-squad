@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{% static 'css/nullstyle.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    {% include 'blocktemplates/headers/header.html' %}
+<main class="main main-dicoration-conteiner">
+    <div class="section-all section-goods">
+        <div class="container">
+            <div class="goods-advertising__img-container">
+                <a href="#" class="goods-advertising__link">
+                    <img src="{% static 'images/advertising-img.jpg' %}" alt="" class="goods-advertising__img">
+                </a>
+            </div>
+            <div class="mass-container-section">
+                <div class="mass-section__inner">
+                    <h2 class="mass-purchase__title title">
+                        Контакты
+                    </h2>
+                    <div class="mass-purchase__content-inner bg-inner">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{% static 'css/nullstyle.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    {% include 'blocktemplates/headers/header.html' %}
+    
+    <main class="main main-dicoration-conteiner">
+        <div class="section-all section-goods">
+            <div class="container">
+                <div class="accounts-tabs__list-content-inner list-content__inner">
+                        <div class="mass-section__wrapper">
+                            <form method="post" class="mass-section__inner" action="." id="sale-vk-furthe-form" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="mass-section__header-block mass-section__content-block">
+                                    <h2 class="sale-purchase__title sale-acc-title">
+                                        Добавление аккаунта VKontakte
+                                    </h2>
+                                    <div class="acc-status__inner">
+                                        <label class="sale-acc-input__content acc-status__title item-block-content--margin-left">
+                                            <input type="text" class="sale-acc-title__value input-value input-hidden" value="" name="sale_acc_vk_title_value">
+                                            title
+                                        </label>
+                                        <span class="sale-acc__status item-block-content--margin-left">
+                                            <div class="sale-acc__status-info">Аккаунт ещё не опубликован и не виден другим пользователям в поиске.</div>
+                                            <img src="{% static 'images/acc-status.svg' %}" alt="">
+                                        </span>
+                                    </div>
+                                    <div class="sale-acc-price">
+                                        <label class="sale-acc-input__content sale-acc-price__value">
+                                            <input type="text" class="sale-acc-price__item-value input-value input-hidden" value="" name="sale_acc_vk_price_value">
+                                            123
+                                        </label>
+                                        
+                                        <label class="sale-acc-input__content sale-acc-currency">
+                                            <input type="text" class="sale-acc-currency__type input-hidden" value="" name="sale_acc_vk_price_currency">
+                                            ₽
+                                        </label>
+                                    </div>
+                                    <a href="" class="sale-acc-link__start-form">Изменить описание / цену</a>
+                                </div>
+                                <div class="mass-section__content-block">
+                                    <h5 class="mass-section__content-block-titles sale-title__mb">Как добавить аккаунт:</h5>
+                                    <ol class="sale-acc-rules">
+                                        <li class="sale-acc-rules__item">Вы сообщаете системе данные от вашего аккаунта через форму ниже.</li>
+                                        <li class="sale-acc-rules__item">Система проверяет валидность аккаунта, собирает необходимую информацию и сохраняет в базу данных.</li>
+                                        <li class="sale-acc-rules__item">После успешного сбора информации об аккаунте, объявление становится доступным для пользователей.</li>
+                                    </ol>
+                                    <p class="">Система не разглашает логины, почты и пароли и другую конфиденциальную информацию от ваших аккаунтов. Эту информацию увидят только Вы и покупатель после покупки вашего аккаунта.</p>
+                                </div>
+                                <div class="mass-section__content-block">
+                                    <h5 class="mass-section__content-block-titles sale-title__mb">Добавить данные от аккаунта:</h5>
+                                    <div class="sale-subtitle">Воспользуйтесь одной из удобной для вас форм:</div>
+                                    <input type="text" name="sale-vk-furthe-form-user-agent" placeholder="User-Agent (Необязательно)" class="mass-section__content-block-input check-list__input-text sale-acc__input-margin-top" form="upload-telegram-form">
+                                    <input type="text" name="sale-vk-furthe-form-vk-token" placeholder="Токен ВК (Необязательно)" class="mass-section__content-block-input check-list__input-text sale-acc__input-margin-top" form="upload-telegram-form">
+                                    <div class="sale__logpass-inner sale-acc__input-margin-top">
+                                        <input type="text" class="sale__logpass-input sale__logpass-item" name="sale-vk-furthe-form-acc-login" value placeholder="Логин">
+                                        <input type="text" class="sale__logpass-input sale__logpass-item" name="sale-vk-furthe-form-acc-pass" value placeholder="Пароль">
+                                        <div class="sale__logpass-text sale__logpass-item">Или</div>
+                                        <input type="text" class="sale__logpass-input sale__logpass-item" name="sale-vk-furthe-form-acc-log-pass" value placeholder="Логин:Пароль">
+                                    </div>
+                                    <div class="sale-acc__check-inner">
+                                        <label class="mass-section-input-check checked-label sale-acc__check-label">
+                                            <input class="mass-section-input-hidden input-hidden input-checked" name="auto_language_translation" type="checkbox">
+                                            <span class="mass-section-input-check__text checked-label__span"> <span class="sale-vk-furthe-form-close-advertisement"></span> Закрыть объявление после публикации (нельзя будет купить)</span>
+                                        </label>
+                                        <label class="mass-section-input-check checked-label sale-acc__check-label">
+                                            <input class="mass-section-input-hidden input-hidden input-checked" name="sale-vk-furthe-form-vote-parse" type="checkbox">
+                                            <span class="mass-section-input-check__text checked-label__span">Спарсить VK голоса</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="mass-section__content-block">
+                                    <div class="mass-section__items-inner">
+                                        <div class="mass-section__content-block-footer content-block-footer">
+                                            <button class="content-block-footer-btn item-block-content--margin-left" type="submit">Проверить аккаунт</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>    
+                </div>
+             </div>
+    </main>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/acc-scripts.js' %}"></script>
+</body>
+</html> 
+
+

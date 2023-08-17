@@ -1,0 +1,204 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{% static 'css/nullstyle.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header class="header header-main">
+    <div class="header__decoration header__decoration-left">
+        <div class="header__decoration-left-item">
+            <div class="header__decoration-title">
+                <div class="header__decoration-title-item">c</div>
+                <div class="header__decoration-title-item">s</div>
+                <div class="header__decoration-title-item">q</div>
+            </div>
+            <div class="header__decoration-label">prd</div>
+        </div>
+
+    </div>
+    <div class="header__decoration header__decoration-right">
+    </div>
+    <div class="header__decoration header__decoration-middle">
+        <picture><source srcset="{% static 'images/flame.gif' %}" type="image/webp"><img src="{% static 'images/flame.gif' %}" alt="" class="header__decoration-middle-img"></picture>
+    </div>
+    <div class="header__inner">
+        <div class="container">
+        <div class="header__main">
+            <div class="header__main-logo">
+                <picture><source srcset="{% static 'images/logoza-logo.svg' %}" type="image/webp"><img src="{% static 'images/logoza-logo.svg' %}" alt="Логотип" class="header__main-ligo-img"></picture>
+            </div>
+            <h1 class="header__main-title">ConnectSquad</h1>
+            <p class="header__main-text"> Инновационный маркетплейс по покупке и продаже аккаунтов, прокси и прочих цифровых товаров</p>
+            <div class="header__main-country">
+                <button class="header__main-country-btn header__main-country-btn--usa"></button>
+                <button class="header__main-country-btn header__main-country-btn--rus"></button>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="header-ticker">
+        <p class="header-ticker__text">
+            Csq production Csq production Csq production Csq production Csq production Csq production Csq production Csq production Csq production Csq production Csq production Csq production Csq production Csq production Csq production Csq production Csq production Csq production Csq production Csq production
+        </p>
+    </div>
+</header>
+       <main class="main main-page">
+            <section class="section main-section" style=" background-image: url('{% static 'images/main-section-bg.gif' %}');">
+    <div class="main-section__dino">
+        <picture><source srcset="{% static 'images/dino.gif' %}" type="image/webp"><img src="{% static 'images/dino.gif' %}" alt=""></picture>
+    </div>
+
+    <div class="main-section__content-block main-content">
+        <ul class="main-content__list">
+            <li class="main-content__item">
+                <a class="main-content__link" href="{% url 'shop:product_list_by_category' category_slug='telegram' %}" style="background-image: url('{% static 'images/tg-bg.png' %}');">
+                    <div class="main-content__link-top">
+                        <img src="{% static 'images/telegram.svg' %}" alt="" class="main-content__accounts-img">
+                    </div>
+                    <div class="main-content__link-bottom --tg-bg">
+                        <p class="main-content__link-bottom-text">Аккаунты Telegram</p>
+                    </div>
+                </a>
+            </li>
+            <!-- <li class="main-content__item">
+                <a class="main-content__link" href="{% url 'shop:product_list_by_category' category_slug='steam' %}" style="background-image: url('{% static 'images/steam-bg.gif' %}')">
+                    <div class="main-content__link-top">
+                        <img src="{% static 'images/steam.svg' %}" alt="" class="main-content__accounts-img">
+                    </div>
+                    <div class="main-content__link-bottom --steam-bg">
+                        <p class="main-content__link-bottom-text">Аккаунты Steam</p>
+                    </div>
+                </a>
+            </li> -->
+            <li class="main-content__item">
+                <a class="main-content__link" href="{% url 'shop:product_list_by_category' category_slug='instagram' %}" style="background-image: url('{% static 'images/ins-bg.gif' %}')">
+                    <div class="main-content__link-top">
+                        <img src="{% static 'images/instagram.svg' %}" alt="" class="main-content__accounts-img">
+                    </div>
+                    <div class="main-content__link-bottom --inst-bg">
+                        <p class="main-content__link-bottom-text">Аккаунты Instagram</p>
+                    </div>
+                </a>
+            </li>
+            <!-- <li class="main-content__item">
+                <a class="main-content__link" href="{% url 'shop:product_list_by_category' category_slug='facebook' %}" style="background-image: url('{% static 'images/fb-bg.gif' %}')">
+                    <div class="main-content__link-top">
+                        <img src="{% static 'images/facebook.svg' %}" alt="" class="main-content__accounts-img">
+                    </div>
+                    <div class="main-content__link-bottom --facebook-bg">
+                        <p class="main-content__link-bottom-text">Аккаунты Facebook</p>
+                    </div>
+                </a>
+            </li> -->
+            <!-- <li class="main-content__item">
+                <a class="main-content__link" href="{% url 'shop:product_list_by_category' category_slug='youtube' %}" style="background-image: url('{% static 'images/yt-bg.gif' %}')">
+                    <div class="main-content__link-top">
+                        <img src="{% static 'images/youtube.svg' %}" alt="" class="main-content__accounts-img">
+                    </div>
+                    <div class="main-content__link-bottom --youtube-bg">
+                        <p class="main-content__link-bottom-text">Аккаунты YouTube</p>
+                    </div>
+                </a>
+            </li> -->
+            <li class="main-content__item">
+                <a class="main-content__link" href="{% url 'shop:product_list_by_category' category_slug='vk' %}" style="background-image: url('{% static 'images/vk-bg.gif' %}')">
+                    <div class="main-content__link-top">
+                        <img src="{% static 'images/vk.svg' %}" alt="" class="main-content__accounts-img">
+                    </div>
+                    <div class="main-content__link-bottom --vk-bg">
+                        <p class="main-content__link-bottom-text">Аккаунты Вконтакте</p>
+                    </div>
+                </a>
+            </li>
+            <!-- <li class="main-content__item">
+                <a class="main-content__link" href="{% url 'shop:product_list_by_category' category_slug='tiktok' %}" style="background-image: url('{% static 'images/tt-bg.gif' %}')">
+                    <div class="main-content__link-top">
+                        <img src="{% static 'images/tiktok.svg' %}" alt="" class="main-content__accounts-img">
+                    </div>
+                    <div class="main-content__link-bottom --tiktok-bg">
+                        <p class="main-content__link-bottom-text">Аккаунты TikTok</p>
+                    </div>
+                </a>
+            </li> -->
+            <li class="main-content__item">
+                <a class="main-content__link" href="{% url 'shop:product_list_by_category' category_slug='ok' %}" style="background-image: url('{% static 'images/ok-bg.gif' %}')">
+                    <div class="main-content__link-top">
+                        <img src="{% static 'images/ok.svg' %}" alt="" class="main-content__accounts-img">
+                    </div>
+                    <div class="main-content__link-bottom --ok-bg">
+                        <p class="main-content__link-bottom-text">Аккаунты  Оk</p>
+                    </div>
+                </a>
+            </li>
+            <!-- <li class="main-content__item">
+                <a class="main-content__link" href="{% url 'shop:product_list_by_category' category_slug='twitter' %}" style="background-image: url('{% static 'images/twitter.gif' %}')">
+                    <div class="main-content__link-top" style="background-image: url('')">
+                        <img src="{% static 'images/twitter.svg' %}" alt="" class="main-content__accounts-img">
+                    </div>
+                    <div class="main-content__link-bottom --twitter-bg">
+                        <p class="main-content__link-bottom-text">Аккаунты Twitter</p>
+                    </div>
+                </a>
+            </li>
+            <li class="main-content__item">
+                <a class="main-content__link" href="{% url 'shop:product_list_by_category' category_slug='mail' %}" style="background-image: url('{% static 'images/mail_ru.gif' %}')">
+                    <div class="main-content__link-top">
+                        <img src="{% static 'images/mail_ru.svg' %}" alt="" class="main-content__accounts-img">
+                    </div>
+                    <div class="main-content__link-bottom --mail-bg">
+                        <p class="main-content__link-bottom-text">Аккаунты Почта</p>
+                    </div>
+                </a>
+            </li> -->
+            <li class="main-content__item">
+                <a class="main-content__link" href="{% url 'shop:product_list_by_category' category_slug='whatsapp' %}" style="background-image: url('{% static 'images/watsapp.gif' %}')">
+                    <div class="main-content__link-top">
+                        <img src="{% static 'images/whatsapp.svg' %}" alt="" class="main-content__accounts-img">
+                    </div>
+                    <div class="main-content__link-bottom --whats-app-bg">
+                        <p class="main-content__link-bottom-text">Аккаунты WhatsApp</p>
+                    </div>
+                </a>
+            </li>
+            <!-- <li class="main-content__item">
+                <a class="main-content__link" href="{% url 'shop:product_list_by_category' category_slug='discord' %}" style="background-image: url('{% static 'images/discord.gif' %}')">
+                    <div class="main-content__link-top">
+                        <img src="{% static 'images/discord.svg' %}" alt="" class="main-content__accounts-img">
+                    </div>
+                    <div class="main-content__link-bottom --discord-bg">
+                        <p class="main-content__link-bottom-text">Аккаунты Discord</p>
+                    </div>
+                </a>
+            </li>
+            <li class="main-content__item">
+                <a class="main-content__link" href="{% url 'shop:product_list_by_category' category_slug='ttv' %}" style="background-image: url('{% static 'images/twitch.gif' %}')">
+                    <div class="main-content__link-top">
+                        <img src="{% static 'images/twitch.svg' %}" alt="" class="main-content__accounts-img">
+                    </div>
+                    <div class="main-content__link-bottom --twitch-bg">
+                        <p class="main-content__link-bottom-text">Аккаунты Twitch</p>
+                    </div>
+                </a>
+            </li> -->
+        </ul>
+    </div>
+    </div>
+
+    <div class="header-ticker">
+        <p class="header-ticker__text">
+            Csq production Csq production Csq production Csq production Csq production Csq production Csq production Csq production Csq production Csq production Csq production Csq production Csq production Csq production Csq production Csq production Csq production Csq production Csq production Csq production
+        </p>
+    </div>
+</section>
+       </main>
+
+
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

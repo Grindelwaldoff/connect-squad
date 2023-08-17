@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{% static 'css/nullstyle.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    {% include 'blocktemplates/headers/header.html' %}
+       <main class="main">
+
+
+    
+    <div class="section-goods">
+    <div class="container">
+        <div class="goods-advertising__img-container">
+            <a href="#" class="goods-advertising__link">
+                <img src="{% static 'images/advertising-img.jpg' %}" alt="" class="goods-advertising__img">
+            </a>
+        </div>
+        <div class="orders-history__inner">
+            <div class="orders-history__header">
+                <div class="orders-history__header-top">
+                    <h4 class="orders-history__title">
+                        <span class="orders-history__title-icon"><img class="orders-history__title-icon-img" src="{% static 'images/bascet-icon.svg' %}" alt=""></span>
+                        <p class="orders-history__title-text">История заказов</p>
+                    </h4>
+                    <div class="orders-history__header-top-inner">
+                        <a href="#" class="orders-history__header-link">
+                            Поиск по e-mail
+                        </a>
+                        <a href="#" class="orders-history__header-link">
+                            Привязать гостевые аккаунты 
+                        </a>
+                    </div>
+                    
+                </div>
+                <div class="orders-history__header-bottom">
+                    <div class="orders-history__header-bottom-inner">
+                        <div class="orders-history__header-bottom-column"><span class="orders-history__header-bottom-title-text">наименование</span></div>
+                        <div class="orders-history__header-bottom-column"><span class="orders-history__header-bottom-title-text">количество</span></div>
+                        <div class="orders-history__header-bottom-column">
+                            <button class="orders-history__header-bottom-btn">
+
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+                {% for his in histors %}
+                    <div class="orders-history__content">{{ his.account_name }} <a href="{% url 'orders:order_create_down' his.id %}">Выгрузить</a></div>
+                {% endfor %}
+            </div>
+
+        </div>
+        </div>
+    </div>
+</div>
+       </main>
+    
+
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

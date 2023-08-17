@@ -1,0 +1,193 @@
+{% load static %}
+<header class="page-marcet__header" style="background-image: url('{% static 'images/header-bg.jpg' %}')">
+    <div class="page-marcet__header-inner">
+        <div class="page-marcet__header-column">
+            <a class="page-marcet__header-logo-container" href="{% url 'inpage:index' %}">
+                <picture><source srcset="{% static 'images/logoza-logo.svg' %}" type="image/webp"><img class="page-marcet__header-logo-img" src="{% static 'images/logoza-logo.svg' %}" alt="Логотип"></picture>
+                <picture><source srcset="{% static 'images/logo-text.webp' %}" type="image/webp"><img class="page-marcet__header-logo-img-text" src="{% static 'images/logo-text.png' %}" alt=""></picture>
+            </a>
+        </div>
+        <div class="page-marcet__header-column page-marcet__header-column-menu">
+            <div class="page-marcet__header-top">
+                <nav class="page-marcet__menu" id="header-nav">
+                    <ul class="page-marcet__menu-list">
+                        <li class="page-marcet__menu-item dropdown dropdown-all">
+                            <button class="page-marcet__menu-btn dropdown-item-button --help" data-dropdown="dropdown">Каталог товаров</button>
+                            <div class="header__dropdown-inner">
+                                <ul class="header__dropdown-list dropdown-list">
+                                    <li class="header__dropdown-item dropdown-item"><a class="header__dropdown-link dropdown-item-click --base-flex-align-container" href="{% url 'shop:product_list_by_category' category_slug='telegram' %}"><span class="header__acc-icon"><img src="{% static 'images/telegram.svg' %}" alt="icon" class="header__acc-icon-img"></span>Telegram аккаунты</a></li>
+                                    <li class="header__dropdown-item dropdown-item"><a class="header__dropdown-link dropdown-item-click --base-flex-align-container" href="{% url 'shop:product_list_by_category' category_slug='instagram' %}"><span class="header__acc-icon"><img src="{% static 'images/instagram.svg' %}" alt="icon" class="header__acc-icon-img"></span>Instagram аккаунты</a></li>
+                                    <li class="header__dropdown-item dropdown-item"><a class="header__dropdown-link dropdown-item-click --base-flex-align-container" href="{% url 'shop:product_list_by_category' category_slug='vk' %}"><span class="header__acc-icon"><img src="{% static 'images/vk.svg' %}" alt="icon" class="header__acc-icon-img"></span>VKontakte аккаунты</a></li>
+                                    <li class="header__dropdown-item dropdown-item"><a class="header__dropdown-link dropdown-item-click --base-flex-align-container" href="{% url 'shop:product_list_by_category' category_slug='ok' %}"><span class="header__acc-icon"><img src="{% static 'images/ok.svg' %}" alt="icon" class="header__acc-icon-img"></span>Odnoklassniki аккаунты</a></li>
+                                    <li class="header__dropdown-item dropdown-item"><a class="header__dropdown-link dropdown-item-click --base-flex-align-container" href="{% url 'shop:product_list_by_category' category_slug='whatsapp' %}"><span class="header__acc-icon"><img src="{% static 'images/whatsapp.svg' %}" alt="icon" class="header__acc-icon-img"></span>WhatsApp аккаунты</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="page-marcet__menu-item"><a class="page-marcet__menu-link" href="{% url "inpage:report" %}">Report</a></li>
+                        <li class="page-marcet__menu-item dropdown dropdown-all">
+                            <button class="page-marcet__menu-btn dropdown-item-button --help" data-dropdown="dropdown">Продать аккаунт</button>
+                            <div class="header__dropdown-inner">
+                                <ul class="header__dropdown-list dropdown-list">
+                                    <li class="header__dropdown-item dropdown-item"><a class="header__dropdown-link dropdown-item-click --base-flex-align-container" href="{% url "inpage:upload_tg" %}"><span class="header__acc-icon"><img src="{% static 'images/telegram.svg' %}" alt="icon" class="header__acc-icon-img"></span>Telegram</a></li>
+                                    <li class="header__dropdown-item dropdown-item"><a class="header__dropdown-link dropdown-item-click --base-flex-align-container" href="{% url "inpage:upload_inst" %}"><span class="header__acc-icon"><img src="{% static 'images/instagram.svg' %}" alt="icon" class="header__acc-icon-img"></span>Instagram</a></li>
+                                    <li class="header__dropdown-item dropdown-item"><a class="header__dropdown-link dropdown-item-click --base-flex-align-container" href="{% url "inpage:upload_vk" %}"><span class="header__acc-icon"><img src="{% static 'images/vk.svg' %}" alt="icon" class="header__acc-icon-img"></span>VKontakte</a></li>
+                                    <li class="header__dropdown-item dropdown-item"><a class="header__dropdown-link dropdown-item-click --base-flex-align-container" href="{% url "inpage:upload_ok" %}"><span class="header__acc-icon"><img src="{% static 'images/ok.svg' %}" alt="icon" class="header__acc-icon-img"></span>Odnoklassniki</a></li>
+                                    <li class="header__dropdown-item dropdown-item"><a class="header__dropdown-link dropdown-item-click --base-flex-align-container" href="{% url "inpage:upload_whatsapp" %}"><span class="header__acc-icon"><img src="{% static 'images/whatsapp.svg' %}" alt="icon" class="header__acc-icon-img"></span>WhatsApp</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="page-marcet__menu-item dropdown dropdown-all">
+                            <button class="page-marcet__menu-btn dropdown-item-button --help" data-dropdown="dropdown">Массовая Загрузка</button>
+                            <div class="header__dropdown-inner">
+                                <ul class="header__dropdown-list dropdown-list">
+                                    <li class="header__dropdown-item dropdown-item"><a class="header__dropdown-link dropdown-item-click --base-flex-align-container" href="{% url "inpage:massupload_tg" %}"><span class="header__acc-icon"><img src="{% static 'images/telegram.svg' %}" alt="icon" class="header__acc-icon-img"></span>Telegram</a></li>
+                                    <li class="header__dropdown-item dropdown-item"><a class="header__dropdown-link dropdown-item-click --base-flex-align-container" href="{% url 'inpage:massupload_inst' %}"><span class="header__acc-icon"><img src="{% static 'images/instagram.svg' %}" alt="icon" class="header__acc-icon-img"></span>Instagram</a></li>
+                                    <li class="header__dropdown-item dropdown-item"><a class="header__dropdown-link dropdown-item-click --base-flex-align-container" href="{% url 'inpage:massupload_vk' %}"><span class="header__acc-icon"><img src="{% static 'images/vk.svg' %}" alt="icon" class="header__acc-icon-img"></span>VKontakte</a></li>
+                                    <li class="header__dropdown-item dropdown-item"><a class="header__dropdown-link dropdown-item-click --base-flex-align-container" href="{% url 'inpage:massupload_ok' %}"><span class="header__acc-icon"><img src="{% static 'images/ok.svg' %}" alt="icon" class="header__acc-icon-img"></span>Odnoklassniki</a></li>
+                                    <li class="header__dropdown-item dropdown-item"><a class="header__dropdown-link dropdown-item-click --base-flex-align-container" href="{% url 'inpage:massupload_whatsapp' %}"><span class="header__acc-icon"><img src="{% static 'images/whatsapp.svg' %}" alt="icon" class="header__acc-icon-img"></span>WhatsApp</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="page-marcet__menu-item"><a class="page-marcet__menu-link" href="{% url "inpage:contacts" %}">Контакты</a></li>
+                        <li class="page-marcet__menu-item"><a class="page-marcet__menu-link" href="{% url "inpage:user_agreements" %}">Правила</a></li>
+                        <li class="page-marcet__menu-item dropdown-error dropdown-all"><button class="page-marcet__menu-link dropdown-item-button --notification">Уведомления</button>
+                            <div class="header__dropdown-inner error-header__dropdown-inner">
+                                
+                            </div>
+                        </li>
+                        <li class="page-marcet__menu-item dropdown dropdown-all">
+                            <button class="page-marcet__menu-btn dropdown-item-button --help" data-dropdown="dropdown">Помощь</button>
+                            <div class="header__dropdown-inner">
+                                <ul class="header__dropdown-list dropdown-list">
+                                    <li class="header__dropdown-item dropdown-item"><a href="#" class="header__dropdown-link dropdown-item-click">FCQ</a></li>
+                                    <li class="header__dropdown-item dropdown-item"><a href="#" class="header__dropdown-link dropdown-item-click">Товар не выдался автоматически?</a></li>
+                                    <li class="header__dropdown-item dropdown-item"><a href="#" class="header__dropdown-link dropdown-item-click">График поддержки</a></li>
+                                    <li class="header__dropdown-item dropdown-item"><a href="#" class="header__dropdown-link dropdown-item-click">База знаний</a></li>
+                                    <li class="header__dropdown-item dropdown-item"><a href="#" class="header__dropdown-link dropdown-item-click">Как купить?</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="page-marcet__header-bottom">
+                <div class="page-marcet__header-bottom-inner">
+                    <div class="page-marcet__header-search page-marcet__header-bottom-item">
+                        <span class="search-icon"></span>
+                        <input type="text" placeholder="Поиск..." class="page-marcet__header-search-area">
+                    </div>
+                    <ul class="header-bottom-menu page-marcet__header-bottom-item">
+                        <li class="header-bottom-menu-item">
+
+                            <button class="page-marcet__header-wallet" data-popup="wallet-popup">
+                                <div class="page-marcet__header-wallet-inner">
+                                    {% if profile %}
+                                        <span class="page-marcet__header-wallet-value">{{ profile.balance }}</span>
+                                    {% else %}
+                                        <span class="page-marcet__header-wallet-value">0</span>
+                                    {% endif %}
+                                    <span class="page-marcet__header-wallet-value">руб</span>
+                                </div>
+                                <a href="{% url "orders:refill" %}" class="page-marcet__header-wallet-link"></a>
+                            </button>
+                        </li>
+                        <li class="header-bottom-menu-item">
+                            <div class="page-marcet__header-user-account">
+                                {% if profile %}
+                                    <a href="{% url "edit" %}" class="page-marcet__header-user-account-link">{{ profile.user.username }}</a>
+                                {% else %}
+                                    <a href="{% url "login" %}" class="page-marcet__header-user-account-link">Войти</a>
+                                {% endif %}
+                            </div>
+                        </li>
+                        <li class="header-bottom-menu-item">
+                            <div class="page-marcet__header-basket">
+                                <a href="{% url "orders:order_create" %}" class="page-marcet__header-basket-btn"></a>
+                            </div>
+                        </li>
+                        <li class="header-bottom-menu-item">
+                            <a onclick="history.go(-1);" class="page-marcet__header-last-orders"></a>
+                        </li>
+                    </ul>
+                </div>
+                <button class="menu-popup-button page-marcet__header-bottom-item popup-button" data-popup="menu-popup">
+                    <span class="menu-popup-button__line"></span>
+                    <span class="menu-popup-button__line"></span>
+                    <span class="menu-popup-button__line"></span>
+                </button>
+                <div class="popup-wrapper page-marcet__header-bottom-item menu-popup --popup">
+                    <div class="menu-popup__inner">
+                        <button class="popup__btn-close" data-close="menu-popup"></button>
+                        <div class="menu-popup__content">
+                            <nav class="menu-popup__nav" id="popup-nav"></nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="popup__container wallet-popup popup-wrapper --popup">
+                    <div class="popup__content-inner">
+                        <div class="popup__content-top">
+                            <h4 class="refill-popup__title popup-title">Пополнить баланс</h4>
+                            <button class="popup__btn-close" data-close="wallet-popup"></button>
+                        </div>
+                        
+                        <form action="#" method="post" class="refill-popup__inner popup__inner refill-popup__form">
+                            <div class="refill-popup__form-header">
+                                <h5 class="refill-popup__subtitle popup-subtitle">Сумма оплаты</h5>
+                                <div class="refill-popup__form-header-inner">
+                                    <div class="refill-popup__form-amount header-popup-area-inner">
+                                        <input type="number" class="refill-popup__form-amount-area header-popup-area">
+                                    </div>
+                                    <div class="all-select-container refill-popup__form-amount-currency header-popup-area-inner">
+                                        <button class="all-select select-all-area select-no-multiple-choice" data-select="'select-all-area">
+                                            <input type="text" data-id="1" name="RUB" class="input-hidden" value="Рубль — ₽">
+                                            <p class="select-all-item">Рубль — ₽</p>
+                                        </button>
+                                        <ul class="select-all-list">
+                                            <li class="select-all-list__item" data-name="RUB">Рубль — ₽</li>
+                                            <li class="select-all-list__item" data-name="UAH">Гривна — ₴</li>
+                                            <li class="select-all-list__item" data-name="KZT">Тенге — ₸</li>
+                                            <li class="select-all-list__item" data-name="BYN">Бел. рубль — BYN</li>
+                                            <li class="select-all-list__item" data-name="USD">Доллар — $</li>
+                                            <li class="select-all-list__item" data-name="EUR">Евро — €</li>
+                                            <li class="select-all-list__item" data-name="GBP">Фунт стерлингов — £</li>
+                                            <li class="select-all-list__item" data-name="CNY">Юань — ¥</li>
+                                            <li class="select-all-list__item" data-name="TRY">Турецкая лира — ₺</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                    </div>
+                                    <div class="refill-popup__form-body">
+                                        <h5 class="refill-popup__subtitle popup-subtitle">Способ оплаты</h5>
+                                        <div class="refill-popup__form-amount-currency">
+                                            <div class="refill-popup__form-pays pays-inner">
+                                                <input class="refill-popup__form-input input-hidden" type="radio" id="binance" value="">
+                                                <label for="binance" class="refill-popup__form-pays-label pays-item">
+                                                    <span class="refill-popup__form-pays-label-dicoration"><img src="{% static 'images/binance-pay.svg' %}" class="refill-popup__form-pays-label-dicoration-img" alt=""></span>
+                                                    <p class="refill-popup__form-pays-label-text">Binance Pay <span data-pay-percent="binance">5</span> %</p>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="refill-popup__subtitle-text">
+                                            Нет подходящего способа оплаты?
+                                        </div>
+                                        <div class="refill-popup__descriptiom-inner">
+                                            <div class="refill-popup__description">Воспользуйтесь обменником на <a href="https://www.bestchange.ru/" class="refill-popup__descriptiom-link">BestChange.</a></div>
+                                            <div class="refill-popup__description">Например, <a href="https://www.bestchange.ru/" class="refill-popup__descriptiom-link">Обмен Приват 24 UAH на Bitcoin (BTC)</a></div>
+                                        </div>
+                                    </div>
+                                    <div class="refill-popup__form-footer">
+                                        <button class="refill-popup__form-footer popup-submit-btn">Перейти к оплате</button>
+                                        <div class="refill-popup__form-footer-links">
+                                            <a href="#" class="refill-popup__form-footer-links-item">Не пришли деньги?</a>
+                                            <a href="#" class="refill-popup__form-footer-links-item">Мои заказы</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

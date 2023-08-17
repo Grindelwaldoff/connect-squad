@@ -1,0 +1,177 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{% static 'css/nullstyle.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    {% include 'blocktemplates/headers/header.html' %}
+       <main class="main main-dicoration-conteiner">
+
+
+    
+        <section class="section-goods">
+            <div class="container">
+            <div class="container-section">
+                <div class="goods-advertising__img-container">
+                    <a href="#" class="goods-advertising__link">
+                        <img src="{% static 'images/advertising-img.jpg' %}" alt="" class="goods-advertising__img">
+                    </a>
+                </div>
+                <div class="mass-container-section">
+                    <div class="mass-section__wrapper">
+                        <div class="mass-section__inner bg-inner">
+                        <h2 class="section__title title --margin">
+                            Ответчик
+                        </h2>
+                        <div class="section__content --margin">
+                            <div class="section__content-item --margin">
+                                <h5 class="section__content-title --margin-min">На кого подается жалоба</h5>
+                                <p class="section__content-text --margin-min">Укажите никнейм или ссылку на профиль.</p>
+                                <input type="text" class="section__content-area mass-section__content-block-input check-list__input-text --margin-min">
+                            </div>
+                            <div class="section__content-item --margin">
+                                <h5 class="section__content-title --margin-min">Вы купили аккаунт на маркете?</h5>
+                                <ul class="section__content-inner section__content-inner-radio-label-style flext-content --margin-min">
+                                    <li class="section__content-inner-item">
+                                        <input type="radio" id="bought-yes" name="bought" class="section__content-radio-input input-hidden">
+                                        <label for="bought-yes" class="section__content-radio">Да</label>
+                                    </li>
+                                    <li class="section__content-inner-item">
+                                        <input type="radio" id="bought-no" name="bought" class="section__content-radio-input input-hidden">
+                                        <label for="bought-no" class="section__content-radio">Нет</label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="section__content-item --margin">
+                                <h5 class="section__content-title --margin-min">Сумма претензии</h5>
+                                <p class="section__content-text --margin-min">Укажите сумму, на которую вас обманул ответчик.</p>
+                                <div class="section__content-item-area-select-width section__content-item-area-flex flext-content --margin-min">
+                                    <input type="text" class="section__content-area-item --margin-l mass-section__content-block-input check-list__input-text">
+                                    <div class="section__content-area-item --margin-l all-select-container refill-popup__form-amount-currency header-popup-area-inner">
+                                        <button class="section__content-area-select all-select select-all-area select-no-multiple-choice" data-select="'select-all-area">
+                                            <input type="text" data-id="1" name="RUB" class="input-hidden" value="Рубль — ₽">
+                                            <p class="select-all-item">Рубль — ₽</p>
+                                        </button>
+                                        <ul class="select-all-list">
+                                            <li class="select-all-list__item" data-name="RUB">Рубль — ₽</li>
+                                            <li class="select-all-list__item" data-name="UAH">Гривна — ₴</li>
+                                            <li class="select-all-list__item" data-name="KZT">Тенге — ₸</li>
+                                            <li class="select-all-list__item" data-name="BYN">Бел. рубль — BYN</li>
+                                            <li class="select-all-list__item" data-name="USD">Доллар — $</li>
+                                            <li class="select-all-list__item" data-name="EUR">Евро — €</li>
+                                            <li class="select-all-list__item" data-name="GBP">Фунт стерлингов — £</li>
+                                            <li class="select-all-list__item" data-name="CNY">Юань — ¥</li>
+                                            <li class="select-all-list__item" data-name="TRY">Турецкая лира — ₺</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section__content-item --margin">
+                                <h5 class="section__content-title --margin-min">Сделка происходила через гаранта или "безопасную сделку"?</h5>
+                                <ul class="section__content-inner section__content-inner-radio-label-style flext-content --margin-min">
+                                    <li class="section__content-inner-item --margin-min">
+                                        <input type="radio" id="deal-yes" name="deal" class="section__content-radio-input input-hidden">
+                                        <label for="deal-yes" class="section__content-radio">Да</label>
+                                    </li>
+                                    <li class="section__content-inner-item">
+                                        <input type="radio" id="deal-no" name="deal" class="section__content-radio-input input-hidden">
+                                        <label for="deal-no" class="section__content-radio">Нет</label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="section__content-item --margin">
+                                <h5 class="section__content-title --margin-min">Чек перевода средств</h5>
+                                <p class="section__content-text --margin-min">Загрузите квитанцию перевода средств, используйте кнопку "Посмотреть квитанцию" в кошельке. Необходимо загрузить на сайт <a href="https://service.shopsender.ru/ "> https://service.shopsender.ru/</a> Напишите "нет", если вы не производили оплату.</p>
+                                <input type="text" class="section__content-area mass-section__content-block-input check-list__input-text --margin-min">
+                                <label class="check-list__item-choose-label item-choose-label check-label-btn standart-btn-style --margin-min">
+                                    <input type="file" class="check-list__item-choose input-hidden">
+                                    <span class="check-list__item-span-text">Прикрепить изображение</span> 
+                                </label>
+                            </div>
+                            <div class="section__content-item --margin">
+                                <h5 class="section__content-title --margin-min">Скриншот, на котором видно логин ответчика в Telegram</h5>
+                                <p class="section__content-text --margin-min">Если переписка велась в Telegram, загрузите скриншот, на котором будет отображен логин Telegram ответчика на фоне вашего диалога. Скриншот необходимо загрузить на сайт <a href="https://service.shopsender.ru/ ">https://service.shopsender.ru/ </a> 
+                                    Если переписка велась в другом месте, напишите "нет".</p>
+                                <input type="text" class="section__content-area mass-section__content-block-input check-list__input-text --margin-min">
+                                <label class="check-list__item-choose-label item-choose-label check-label-btn standart-btn-style --margin-min">
+                                    <input type="file" class="check-list__item-choose input-hidden">
+                                    <span class="check-list__item-span-text">Прикрепить изображение</span> 
+                                </label>
+                            </div>
+                            <div class="section__content-item --margin">
+                                <h5 class="section__content-title --margin-min">Что случилось?</h5>
+                                <ul class="section__content-item-text-list section__content-text --margin-min">
+                                    <li class="section__content-item-text-list-item">- опишите ситуацию в двух словах. При желании вы можете описать ситуацию более детально, используя функцию "Спойлер".</li>
+                                    <li class="section__content-item-text-list-item">- прикрепите скриншоты переписок. Загружать необходимо на сайт https://service.shopsender.ru/</li>
+                                    <li class="section__content-item-text-list-item">- для удобства используйте Ctrl + V, загрузив скриншоты в альбом.</li>
+                                    <li class="section__content-item-text-list-item">- иные доказательства;* - уведомите ответчика о созданной вами жалобе, ознакомьте его с хайдом Опишите ситуацию как можно подробнее и понятнее.</li>
+                                </ul>
+                                <textarea class="section__content-item-textarea check-list__item-textarea --margin-min"></textarea>
+                            </div>
+                            <div class="section__content-item --margin">
+                                <h5 class="section__content-title --margin-min">Теги:</h5>
+                                <p class="section__content-text --margin-min">Несколько тегов могут быть разделены запятыми.</p>
+                                <input type="text" class="section__content-area mass-section__content-block-input check-list__input-text --margin-min">
+                                <div class="section__content-item-area-flex flext-content --margin-min">
+                                    <button class="section__content-item-btn --margin-l --greeen">Создать тему</button>
+                                    <button class="section__content-item-btn --margin-l --standart">Предварительный просмотр...</button>
+                                </div>
+                            </div>
+                            <div class="section__content-item --margin">
+                                <h5 class="section__content-title --margin-min">Настройки:</h5>
+                                <ul class="section__content-item-checked-list --margin-min">
+                                    <li class="section__content-item-checked-list-item item-block-content--margin-top">
+                                        <span class="mass-section-input-check checked-label">
+                                            <input class="mass-section-input-hidden input-hidden input-checked" id="input-checked-1" name="settings" type="checkbox">
+                                            <label for="input-checked-1" class="mass-section-input-check__text checked-label__span section__content-item-checked-label-span">Скрывать контакты в теме</label>
+                                        </span>
+                                    </li>
+                                    <li class="section__content-item-checked-list-item item-block-content--margin-top">
+                                        <span class="mass-section-input-check checked-label">
+                                            <input class="mass-section-input-hidden input-hidden input-checked" id="input-checked-2" name="settings" type="checkbox">
+                                            <label for="input-checked-2" class="mass-section-input-check__text checked-label__span section__content-item-checked-label-span">Разрешить просить "Личный" (если есть "хайд" в теме)</label>
+                                        </span>
+                                    </li>
+                                    <li class="section__content-item-checked-list-item item-block-content--margin-top">
+                                        <span class="mass-section-input-check checked-label">
+                                            <input class="mass-section-input-hidden input-hidden input-checked" id="input-checked-3" name="settings" type="checkbox">
+                                            <label for="input-checked-3" class="mass-section-input-check__text checked-label__span section__content-item-checked-label-span">Подписаться на тему...</label>
+                                        </span>
+                                    </li>
+                                    <li class="section__content-item-checked-list-item item-block-content--margin-top">
+                                        <span class="mass-section-input-check checked-label">
+                                            <input class="mass-section-input-hidden input-hidden input-checked" id="input-checked-4" name="settings" type="checkbox">
+                                            <label for="input-checked-4" class="mass-section-input-check__text checked-label__span section__content-item-checked-label-span">и получать уведомления на электронную почту</label>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    
+                </div>
+            </div>
+            </div>
+        </section>
+    </main>
+    
+
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

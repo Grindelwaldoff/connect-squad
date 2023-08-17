@@ -1,0 +1,537 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{% static 'css/nullstyle.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+        {% include 'blocktemplates/headers/header.html' %}
+
+       <main class="main">
+
+
+
+        <div class="section-goods">
+            <div class="container-section">
+                <div class="goods-advertising__img-container">
+                    <a href="#" class="goods-advertising__link">
+                        <img src="{% static 'images/advertising-img.jpg' %}" alt="" class="goods-advertising__img">
+                    </a>
+                </div>
+                <div class="goods-wrapper tg-goods-wrapper">
+                    <form class="goods-form goods-tg-form" method="get" id="acc-filter-form">
+                        <div class="goods-form__container">
+                            <div class="goods-form__column">
+                                <div class="goods-form__inner">
+                                    <div class="goods-form__price form-tabel --margin">
+                                        <div class="area-inner form-tabel-item">
+                                            <span></span>
+                                            <input type="number" placeholder="Цена от" class="goods-form__input-price all-input">
+                                            <p class="price-acc" id="rub">₽</p>
+                                        </div>
+
+                                        <div class="area-inner form-tabel-item">
+                                            <span></span>
+                                            <input type="number" placeholder="До" class="goods-form__input-price all-input">
+                                            <p class="price-acc" id="rub">₽</p>
+                                        </div>
+                                    </div>
+                                    <div class="goods-form__country area-inner all-select-container --margin">
+                                        <button class="goods-form__select all-select all-select__country select-all-area">
+                                            Происхождение аккаунта
+                                        </button>
+                                        <ul class="select-all-list">
+                                            <li class="select-all-list__item --dropdown-close" data-name="Происхождение аккаунта">Не важно</li>
+                                            <li class="select-all-list__item" data-item-value="origin_acc_value" data-item-name="origin_acc">Брут</li>
+                                            <li class="select-all-list__item" data-item-value="origin_acc_value" data-item-name="origin_acc">Стилер</li>
+                                            <li class="select-all-list__item" data-item-value="origin_acc_value" data-item-name="origin_acc">Личный</li>
+                                            <li class="select-all-list__item" data-item-value="origin_acc_value" data-item-name="origin_acc">Перепродажа</li>
+                                            <li class="select-all-list__item" data-item-value="origin_acc_value" data-item-name="origin_acc">Авторег</li>
+                                        </ul>
+                                    </div>
+                                    <div class="goods-form__country area-inner all-select-container --margin">
+                                        <button class="goods-form__select all-select all-select__country select-all-area">
+                                            Исключить происхождение аккаунта
+                                        </button>
+                                        <ul class="select-all-list">
+                                            <li class="select-all-list__item --dropdown-close" data-name="Исключить происхождение аккаунта">Не важно</li>
+                                            <li class="select-all-list__item" data-item-value="origin_acc_value" data-item-name="exclude_origin_acc">Брут</li>
+                                            <li class="select-all-list__item" data-item-value="origin_acc_value" data-item-name="exclude_origin_acc">Стилер</li>
+                                            <li class="select-all-list__item" data-item-value="origin_acc_value" data-item-name="exclude_origin_acc">Личный</li>
+                                            <li class="select-all-list__item" data-item-value="origin_acc_value" data-item-name="exclude_origin_acc">Перепродажа</li>
+                                            <li class="select-all-list__item" data-item-value="origin_acc_value" data-item-name="exclude_origin_acc">Авторег</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="goods-form__country area-inner all-select-container --margin">
+                                        <button class="goods-form__select all-select all-select__country select-all-area">
+                                            Доступ к почте
+                                        </button>
+                                        <ul class="select-all-list">
+                                            <li class="select-all-list__item --dropdown-close" data-name="Доступ к почте" data-id="1">Не важно</li>
+                                            <li class="select-all-list__item" data-item-value="mailValue" data-item-name="mail" data-id="2">Авторег</li>
+                                            <li class="select-all-list__item" data-item-value="mailValue" data-item-name="mail" data-id="3">Родная</li>
+                                            <li class="select-all-list__item" data-item-value="mailValue" data-item-name="mail" data-id="4">Без доступа к почте</li>
+                                        </ul>
+                                    </div>
+                                    <div class="goods-form__acc-origin acc-origin-tg area-inner --margin">
+                                        <span></span>
+                                        <input type="text" placeholder="Почтовый домен" class="all-input"  name="mail_domain">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="goods-form__column">
+                                <div class="goods-form__inner">
+                                    <div class="goods-form__id-search area-inner --margin">
+                                        <span></span>
+                                        <input type="search" placeholder="Поиск по заголовку" class="goods-form__id-search-input all-input">
+                                    </div>
+                                    <div class="gods-form__container --margin">
+                                        <div class="goods-form__subscribers form-tabel --margin">
+                                            <div class="area-inner form-tabel-item">
+                                                <span></span>
+                                                <input type="number" placeholder="Подписчиков от" class="goods-form__input-subscribers all-input" name="min">
+                                            </div>
+
+                                            <div class="area-inner form-tabel-item">
+                                                <span></span>
+                                                <input type="number" placeholder="Подписчиков до" class="goods-form__input-subscribers all-input" name="max">
+                                            </div>
+                                        </div>
+                                        <div class="goods-form__subscribers form-tabel --margin">
+                                            <div class="area-inner form-tabel-item">
+                                                <span></span>
+                                                <input type="number" placeholder="Просмотров от" class="goods-form__input-subscribers all-input" name="min">
+                                            </div>
+
+                                            <div class="area-inner form-tabel-item">
+                                                <span></span>
+                                                <input type="number" placeholder="Просмотров до" class="goods-form__input-subscribers all-input" name="max">
+                                            </div>
+                                        </div>
+                                        <div class="goods-form__subscribers form-tabel --margin">
+                                            <div class="area-inner form-tabel-item">
+                                                <span></span>
+                                                <input type="number" placeholder="Медиа от" class="goods-form__input-subscribers all-input" name="min">
+                                            </div>
+
+                                            <div class="area-inner form-tabel-item">
+                                                <span></span>
+                                                <input type="number" placeholder="Медиа до" class="goods-form__input-subscribers all-input" name="max">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="radio-box --margin">
+                                        <h5 class="radio-box__title">Регистрация ранее</h5>
+                                        <ul class="goods-form__list-spamblock radio-box-list">
+                                            <li class="goods-form__list-item area-inner --margin-l">
+                                                <span></span>
+                                                <input class="all-input" type="number" placeholder="X..." id="inst_reg_time" name="acc_reg_time">
+                                            </li>
+                                            <li class="goods-form__list-item area-inner --margin-l">
+                                                <div class="--margin all-select-container">
+                                                    <button class="goods-form__select all-select select-all-area select-no-multiple-choice --no-submit --is-active" data-select="'select-all-area">
+                                                        <input type="text" data-id="1" name="reg_time" class="input-hidden" value="Лет назад">
+                                                        <p class="select-all-item">Лет назад</p>
+                                                    </button>
+                                                    <ul class="select-all-list">
+                                                        <li class="select-all-list__item --add-name --dropdown-close" data-name="reg_time" data-id="1">Лет назад</li>
+                                                        <li class="select-all-list__item" data-item-value="reg_time_value" data-name="reg_time" data-id="2">Месяцев назад</li>
+                                                        <li class="select-all-list__item" data-item-value="reg_time_value" data-name="reg_time" data-id="3">Дней назад</li>
+                                                        <li class="select-all-list__item" data-item-value="reg_time_value" data-name="reg_time" data-id="4">Часов назад</li>
+                                                        <li class="select-all-list__item" data-item-value="reg_time_value" data-name="reg_time" data-id="5">Минут назад</li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="radio-box --margin">
+                                        <h5 class="radio-box__title">Verified</h5>
+                                        <ul class="goods-form__list-premium radio-box-list">
+                                            <li class="goods-form__list-item area-inner --margin-l">
+                                                <span></span>
+                                                <input class="input-hidden" type="radio" id="cookies-1" name="premium">
+                                                <label for="cookies-1" class="goods-form__list-item-label all-input">Не важно</label>
+                                            </li>
+                                            <li class="goods-form__list-item area-inner --margin-l">
+                                                <span></span>
+                                                <input type="radio" class="input-hidden" id="cookies-2" name="premium">
+                                                <label for="cookies-2" class="goods-form__list-item-label all-input">Нет</label>
+                                            </li>
+                                            <li class="goods-form__list-item area-inner --margin-l">
+                                                <span></span>
+                                                <input type="radio" class="input-hidden" id="cookies-3" name="premium">
+                                                <label for="cookies-3" class="goods-form__list-item-label all-input">Да</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="radio-box --margin">
+                                        <h5 class="radio-box__title">Пароль от аккаунта</h5>
+                                        <ul class="goods-form__list-premium radio-box-list">
+                                            <li class="goods-form__list-item area-inner --margin-l">
+                                                <span></span>
+                                                <input class="input-hidden" type="radio" id="login-cookies-1" name="acc_pass">
+                                                <label for="login-cookies-1" class="goods-form__list-item-label all-input">Не важно</label>
+                                            </li>
+                                            <li class="goods-form__list-item area-inner --margin-l">
+                                                <span></span>
+                                                <input type="radio" class="input-hidden" id="login-cookies-2" name="acc_pass">
+                                                <label for="login-cookies-2" class="goods-form__list-item-label all-input">Нет</label>
+                                            </li>
+                                            <li class="goods-form__list-item area-inner --margin-l">
+                                                <span></span>
+                                                <input type="radio" class="input-hidden" id="login-cookies-3" name="acc_pass">
+                                                <label for="login-cookies-3" class="goods-form__list-item-label all-input">Да</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="goods-form__column">
+                                <div class="goods-form__inner">
+                                    <div class="goods-form__button-submit --margin">
+                                        <button class="goods-form__button-submit-btn">
+                                            Показать ~ <span class="goods-form__button-submit-span">8911</span> аккаунтов
+                                        </button>
+                                    </div>
+                                    <div class="goods-form__country area-inner all-select-container --margin">
+                                        <button class="goods-form__select all-select all-select__country select-all-area">
+                                            Страна
+                                        </button>
+                                        <ul class="select-all-list">
+                                            <li class="select-all-list__item --dropdown-close" data-name="Страна">Не важно</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">о-в Вознесения</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Андорра</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">ОАЭ</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Афганистан</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Антигуа и Барбуда</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Ангилья</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Албания</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Армения</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Ангола</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Аргентина</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Американское Самоа</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Австрия</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Австралия</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Аруба</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Аландские о-ва</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Азербайджан</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Босния и Герцеговина</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Барбадос</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Бангладеш</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Бельгия</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Буркина-Фасо</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Болгария</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Бахрейн</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Бурунди</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Бенин</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Сен-Бартелеми</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Бермудские о-ва</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Бруней-Даруссалам</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Беларусь</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Боливия</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Бонэйр, Синт-Эстатиус и Саба</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Болгария</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Грузия</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Дания</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Египет</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Израиль</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Индия</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Индонезия</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Ирландия</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Испания</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Италия</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Казахстан</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Канада</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Кипр</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Киргизия</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Китай</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Корея</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Латвия</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Литва</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Люксембург</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Мексика</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Нидерланды</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Новая Зеландия</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Норвегия</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">ОАЭ</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Польша</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Россия</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Румыния</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Саудовская Аравия</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Сербия</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Сингапур</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">США</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Таджикистан</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Таиланд</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Финляндия</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Франция</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Хорватия</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Чехия</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Швеция</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Эстония</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="country">Япония</li>
+                                        </ul>
+                                    </div>
+                                    <div class="goods-form__country area-inner all-select-container --margin">
+                                        <button class="goods-form__select all-select all-select__country select-all-area">
+                                            Исключить страну
+                                        </button>
+                                        <ul class="select-all-list">
+                                            <li class="select-all-list__item --dropdown-close" data-name="Исключить страну">Не важно</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">о-в Вознесения</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Андорра</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">ОАЭ</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Афганистан</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Антигуа и Барбуда</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Ангилья</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Албания</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Армения</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Ангола</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Аргентина</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Американское Самоа</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Австрия</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Австралия</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Аруба</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Аландские о-ва</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Азербайджан</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Босния и Герцеговина</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Барбадос</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Бангладеш</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Бельгия</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Буркина-Фасо</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Болгария</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Бахрейн</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Бурунди</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Бенин</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Сен-Бартелеми</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Бермудские о-ва</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Бруней-Даруссалам</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Беларусь</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Боливия</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Бонэйр, Синт-Эстатиус и Саба</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Болгария</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Грузия</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Дания</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Египет</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Израиль</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Индия</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Индонезия</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Ирландия</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Испания</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Италия</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Казахстан</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Канада</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Кипр</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Киргизия</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Китай</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Корея</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Латвия</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Литва</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Люксембург</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Мексика</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Нидерланды</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Новая Зеландия</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Норвегия</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">ОАЭ</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Польша</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Россия</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Румыния</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Саудовская Аравия</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Сербия</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Сингапур</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">США</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Таджикистан</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Таиланд</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Финляндия</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Франция</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Хорватия</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Чехия</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Швеция</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Эстония</li>
+                                        <li class="select-all-list__item" data-item-value="countryValue" data-item-name="exclude_country">Япония</li>
+                                        </ul>
+                                    </div>
+                                    <div class="radio-box --margin">
+                                        <h5 class="radio-box__title">Бренд</h5>
+                                        <ul class="goods-form__list-premium radio-box-list">
+                                            <li class="goods-form__list-item area-inner --margin-l">
+                                                <span></span>
+                                                <input class="input-hidden" type="radio" id="login-cookies-1" name="brand">
+                                                <label for="login-cookies-1" class="goods-form__list-item-label all-input">Не важно</label>
+                                            </li>
+                                            <li class="goods-form__list-item area-inner --margin-l">
+                                                <span></span>
+                                                <input type="radio" class="input-hidden" id="login-cookies-2" name="brand">
+                                                <label for="login-cookies-2" class="goods-form__list-item-label all-input">Нет</label>
+                                            </li>
+                                            <li class="goods-form__list-item area-inner --margin-l">
+                                                <span></span>
+                                                <input type="radio" class="input-hidden" id="login-cookies-3" name="brand">
+                                                <label for="login-cookies-3" class="goods-form__list-item-label all-input">Да</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="radio-box --margin">
+                                        <h5 class="radio-box__title">Монетизация</h5>
+                                        <ul class="goods-form__list-premium radio-box-list">
+                                            <li class="goods-form__list-item area-inner --margin-l">
+                                                <span></span>
+                                                <input class="input-hidden" type="radio" id="login-cookies-1" name="acc_monetization">
+                                                <label for="login-cookies-1" class="goods-form__list-item-label all-input">Не важно</label>
+                                            </li>
+                                            <li class="goods-form__list-item area-inner --margin-l">
+                                                <span></span>
+                                                <input type="radio" class="input-hidden" id="login-cookies-2" name="acc_monetization">
+                                                <label for="login-cookies-2" class="goods-form__list-item-label all-input">Нет</label>
+                                            </li>
+                                            <li class="goods-form__list-item area-inner --margin-l">
+                                                <span></span>
+                                                <input type="radio" class="input-hidden" id="login-cookies-3" name="acc_monetization">
+                                                <label for="login-cookies-3" class="goods-form__list-item-label all-input">Да</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="radio-box --margin">
+                                        <h5 class="radio-box__title">Артист</h5>
+                                        <ul class="goods-form__list-premium radio-box-list">
+                                            <li class="goods-form__list-item area-inner --margin-l">
+                                                <span></span>
+                                                <input class="input-hidden" type="radio" id="login-cookies-1" name="artist">
+                                                <label for="login-cookies-1" class="goods-form__list-item-label all-input">Не важно</label>
+                                            </li>
+                                            <li class="goods-form__list-item area-inner --margin-l">
+                                                <span></span>
+                                                <input type="radio" class="input-hidden" id="login-cookies-2" name="artist">
+                                                <label for="login-cookies-2" class="goods-form__list-item-label all-input">Нет</label>
+                                            </li>
+                                            <li class="goods-form__list-item area-inner --margin-l">
+                                                <span></span>
+                                                <input type="radio" class="input-hidden" id="login-cookies-3" name="artist">
+                                                <label for="login-cookies-3" class="goods-form__list-item-label all-input">Да</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+            <div class="goods-acc__container">
+                <div class="goods-label">
+                    <picture><source srcset="{% static 'images/youtube-icon.webp' %}" type="image/webp"><img class="goods-label-img tg-goods-label-img" src="{% static 'images/youtube-icon.png' %}" alt=""></picture>
+                    YouTube
+                </div>
+
+
+                <ul class="goods-list tg-goods-list">
+
+                    {% for product in products %}
+
+                    <li class="goods-list-item InstSpam-goods-item">
+                        <div class="goods-list-item-about">
+                            <div class="goods-list-item-icon InstSpam-goods-item-icon">
+                                <picture><source srcset="{% static 'images/youtube-icon.webp' %}" type="image/webp"><img src="{% static 'images/youtube-icon.png' %}" alt="" class="goods-list-item-icon-img acc-goods-item-icon-img"></picture>
+                            </div>
+                            <div class="goods-list-item__column-text">
+                                {{ product.name }}
+                            </div>
+                        </div>
+
+                        <div class="goods-list-item__column">
+                            <div class="goods-list-item__quantity goods-list-item__column-item --margin-l"><span class="goods-list-item__quantity-num">500</span> шт.</div>
+                            <div class="goods-list-item__price goods-list-item__column-item --margin-l"><span class="goods-list-item__price-num">${{ product.price }}</span> ₽</div>
+                            <div class="token --margin-l">{% csrf_token %}</div>
+                            <button class="goods-list-item__btn goods-list-item__column-item --margin-l tg-goods-list-item__btn" data-popup="popup-buy">Купить</button>
+                        </div>
+
+                    </li>
+                        <!-- <li class="goods-list-item tg-goods-item">
+
+                        <div class="goods-list-item-icon tg-goods-item-icon">
+                            <picture><source srcset="{% static 'images/tg-icon.webp' %}" type="image/webp"><img src="{% static 'images/tg-icon.png' %}" alt="" class="goods-list-item-icon-img tg-goods-item-icon-img"></picture>
+                        </div>
+                        <a>{{ product.name }}</a>
+
+                            <a href="{% url 'shop:buy_product' product.id %}" class="goods-list-item__btn tg-goods-list-item__btn">Купить</a>
+                    </li> -->
+                {% endfor %}
+                    <li class="goods-list-item InstSpam-goods-item">
+                        <div class="goods-list-item-about">
+                            <div class="goods-list-item-icon InstSpam-goods-item-icon">
+                                <picture><source srcset="{% static 'images/youtube-icon.webp' %}" type="image/webp"><img src="{% static 'images/youtube-icon.png' %}" alt="" class="goods-list-item-icon-img acc-goods-item-icon-img"></picture>
+                            </div>
+                            <div class="goods-list-item__column-text">
+                                lsjrdg klserdfblcgsb vedfpipuhsr  kjhv kjhv jhvl jghv gv g vl gjc gc kgck gc kgc kg c gcdflcuhbprdfc jkugfci o uygouy fohgfg ouyf ouyf ouyfy ouyf oytf
+                            </div>
+                        </div>
+
+                        <div class="goods-list-item__column">
+                            <div class="goods-list-item__quantity goods-list-item__column-item --margin-l"><span class="goods-list-item__quantity-num">500</span> шт.</div>
+                            <div class="goods-list-item__price goods-list-item__column-item --margin-l"><span class="goods-list-item__price-num">264.65</span> ₽</div>
+                            <button class="goods-list-item__btn goods-list-item__column-item --margin-l tg-goods-list-item__btn" data-popup="popup-buy">Купить</button>
+                        </div>
+
+                    </li>
+
+                </ul>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+       </main>
+       <div class="popup-buy popup-wrapper popup__container --popup">
+        <div class="popup__content-inner">
+            <div class="popup__content-top">
+                <h4 class="popup-title">Оплата товара</h4>
+                <button class="popup__btn-close" data-close="popup-buy"></button>
+            </div>
+
+            <form action="#" method="post" class="popup__inner buy-popup__form popup-column-wrapper">
+                <div class="buy-popup__form-inner">
+                    <div class="popup-column">
+                        <h5 class="popup-buy-title popup-subtitle">Цена</h5>
+                        <div class="popup-buy-price popup-area--all"><span class="popup-buy-price-container-num"><input class="popup-buy-price-num popup-buy-price-num-default" type="text" readonly value="" name="buy-price"></span> <cpan class="popup-buy-price-currency">₽</cpan></div>
+
+                    </div>
+                    <div class="popup-column">
+                        <div class="popup-column__item">
+                            <h5 class="popup-buy-title popup-subtitle">Кол-во</h5>
+                            <div class="popup-counter counter-wrapper popup-area--all">
+                                <button class="items__control" data-action="minus">-</button>
+                                <div class="counter-num-wrapper"><input type="number" class="items__current" value="1" name="buy-quantity"></div>
+                                <div class="counter-max-num-container">шт.<span class="counter-max-num-wrapper">1</span></div>
+                                <button class="items__control" data-action="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="popup-column__item">
+                            <h5 class="popup-buy-title popup-subtitle">Тип аккаунта</h5>
+                            <div class="popup-buy-tag__container">
+                                <input type="text" readonly class="popup-buy-tag popup-area--all" value="Фишинг">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="popup-buy__content-text">
+
+                </p>
+                <button class="popup-buy__content-btn">Оплатить</button>
+            </form>
+        </div>
+       </div>
+
+
+
+    <div class="error-container">
+        <div class="error-wrapper">
+        </div>
+    </div>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{% static 'css/nullstyle.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    {% include 'blocktemplates/headers/header.html' %}
+    <main class="main">
+        <div class="section-goods">
+            <div class="container-section">
+                <div class="goods-advertising__img-container">
+                    <a href="#" class="goods-advertising__link">
+                        <img src="{% static 'images/advertising-img.jpg' %}" alt="" class="goods-advertising__img">
+                    </a>
+                </div>
+                <div class="goods-wrapper tg-goods-wrapper">
+                    {% include './social_network_form.html' %}
+            <div class="goods-acc__container">
+                <div class="goods-label">
+                    <picture><source srcset="{% static 'images/facebook-icon.webp' %}" type="image/webp"><img class="goods-label-img tg-goods-label-img" src="{% static 'images/facebook-icon.png' %}" alt=""></picture>
+                    Facebook
+                </div>
+                <ul class="goods-list tg-goods-list">
+                    {% for raw in filter.qs %}
+                        <li class="goods-list-item InstSpam-goods-item">
+                            <div class="goods-list-item-about">
+                                <div class="goods-list-item-icon InstSpam-goods-item-icon">
+                                    <picture><source srcset="{% static 'images/facebook-icon.webp' %}" type="image/webp"><img src="{% static 'images/facebook-icon.png' %}" alt="" class="goods-list-item-icon-img acc-goods-item-icon-img"></picture>
+                                </div>
+                                <div class="goods-list-item__column-text">
+                                    {{ raw.product.name }}
+                                </div>
+                            </div>
+
+                            <div class="goods-list-item__column">
+                                <div class="goods-list-item__quantity goods-list-item__column-item --margin-l"><span class="goods-list-item__quantity-num">{{ raw.product.stock }}</span> шт.</div>
+                                <div class="goods-list-item__price goods-list-item__column-item --margin-l"><span class="goods-list-item__price-num">${{ raw.product.price }}</span> ₽</div>
+                                <div class="token --margin-l">{% csrf_token %}</div>
+                                <button class="goods-list-item__btn goods-list-item__column-item --margin-l tg-goods-list-item__btn" data-popup="popup-buy">Купить</button>
+                            </div>
+
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+       </main>
+       <div class="popup-buy popup-wrapper popup__container --popup">
+        <div class="popup__content-inner">
+            <div class="popup__content-top">
+                <h4 class="popup-title">Оплата товара</h4>
+                <button class="popup__btn-close" data-close="popup-buy"></button>
+            </div>
+
+            <form action="#" method="post" class="popup__inner buy-popup__form popup-column-wrapper">
+                <div class="buy-popup__form-inner">
+                    <div class="popup-column">
+                        <h5 class="popup-buy-title popup-subtitle">Цена</h5>
+                        <div class="popup-buy-price popup-area--all"><span class="popup-buy-price-container-num"><input class="popup-buy-price-num popup-buy-price-num-default" type="text" readonly value="" name="buy-price"></span> <cpan class="popup-buy-price-currency">₽</cpan></div>
+
+                    </div>
+                    <div class="popup-column">
+                        <div class="popup-column__item">
+                            <h5 class="popup-buy-title popup-subtitle">Кол-во</h5>
+                            <div class="popup-counter counter-wrapper popup-area--all">
+                                <button class="items__control" data-action="minus">-</button>
+                                <div class="counter-num-wrapper"><input type="number" class="items__current" value="1" name="buy-quantity"></div>
+                                <div class="counter-max-num-container">шт.<span class="counter-max-num-wrapper">1</span></div>
+                                <button class="items__control" data-action="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="popup-column__item">
+                            <h5 class="popup-buy-title popup-subtitle">Тип аккаунта</h5>
+                            <div class="popup-buy-tag__container">
+                                <input type="text" readonly class="popup-buy-tag popup-area--all" value="Фишинг">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="popup-buy__content-text">
+
+                </p>
+                <button class="popup-buy__content-btn">Оплатить</button>
+            </form>
+        </div>
+       </div>
+
+
+
+    <div class="error-container">
+        <div class="error-wrapper">
+        </div>
+    </div>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

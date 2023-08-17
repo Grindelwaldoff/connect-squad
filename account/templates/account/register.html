@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "css/nullstyle.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <title>{{ title }}</title>
+</head>
+<body>
+    {% include 'blocktemplates/headers/header.html' %}
+    <main class="main-content">
+        <div class="container">
+            <form class="registr-form acc-form" action="." method="post" id="register-form">
+                {% csrf_token %}
+                <div class="registr-form__logo form__logo">
+                    <img class="form__logo-img" src="{% static 'images/logoza-logo.svg' %}" alt="">
+                    <img src="{% static 'images/logo-text-img.svg' %}" alt="" class="form__logo-img-text">
+                </div>
+                <h6 class="form__title">Создать аккаунт</h6>
+                <ul class="form__areas-list">
+                    <li class="form__areas-item">
+            <input type="text" placeholder="Логин" class="form__areas-input" name="{{ user_form.username.html_name }}"
+                id="{{ user_form.username.auto_id }}" form="register-form">
+        </li>
+        <li class="form__areas-item">
+            <input type="text" placeholder="E-mail" class="form__areas-input" name="{{ user_form.email.html_name }}"
+                id="{{ user_form.email.auto_id }}" form="register-form">
+        </li>
+        <li class="form__areas-item">
+            <input type="password" placeholder="Введите пароль" class="form__areas-input" name="{{ user_form.password.html_name }}"
+                id="{{ user_form.password.auto_id }}" form="register-form">
+        </li>
+
+        <li class="form__areas-item">
+            <input type="password" placeholder="Повторите пароль" class="form__areas-input" name="{{ user_form.password2.html_name }}"
+                id="{{ user_form.password2.auto_id }}" form="register-form">
+        </li>
+        <li class="form__areas-item">
+            <button type="submit" class="form__areas-btn">Создать аккаунт</button>
+        </li>
+                </ul>
+                <div class="form__link">
+                    Уже есть аккаунт? <a href="{% url 'login' %}" class="form__link-item">Войти</a>
+                </div>
+            </form>
+        </div>
+    </main>
+    <script src="{% static "js/main.js" %}"></script>
+</body>
+</html>

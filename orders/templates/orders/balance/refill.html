@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="{% static 'css/nullstyle.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>{{ title }}</title>
+</head>
+<body>
+    {% include 'blocktemplates/headers/header.html' %}
+    <div class="section-goods">
+        <div class="container">
+            <div class="goods-advertising__img-container">
+                <a href="#" class="goods-advertising__link">
+                    <img src="{% static 'images/advertising-img.jpg' %}" alt="" class="goods-advertising__img">
+                </a>
+            </div>
+            <div class="refill__wrapper">
+                <h2 class="refill__title">
+                    Пополнение баланса
+                </h2>
+                <div class="refill__inner">
+                    <form method="post" class="refill__payment" action="." id="add-balance">
+                        {% csrf_token %}
+                        <div class="refill__payment-wrapper refill-wrapper">
+                            <h5 class="refill__payment-cards-title title-min">
+                                Выберите способ оплаты
+                            </h5>
+                            <div class="refill__payment-inner">
+                                <ul class="refill__payment-cards-list refill-inner">
+                                    <li class="refill__payment-cards-list-item">
+                                        <input id="card" class="refill__payment-cards-list-input" type="radio" name="pay-card" value="" type="text">
+                                        <label for="card" class="refill__payment-card-list-label" style="background-image: url('{% static 'images/card-icon.svg' %}')"></label>
+                                    </li>
+                                    <li class="refill__payment-cards-list-item">
+                                        <input id="card-2" class="refill__payment-cards-list-input" type="radio" name="pay-card" value="" type="text">
+                                        <label for="card-2" class="refill__payment-card-list-label" style="background-image: url('{% static 'images/card-icon.svg' %}')"></label>
+                                    </li>
+                                    <li class="refill__payment-cards-list-item">
+                                        <input id="card-3" class="refill__payment-cards-list-input" type="radio" name="pay-card" value="" type="text">
+                                        <label for="card-3" class="refill__payment-card-list-label" style="background-image: url('{% static 'images/card-icon.svg' %}')"></label>
+                                    </li>
+                                    <li class="refill__payment-cards-list-item">
+                                        <input id="card-4" class="refill__payment-cards-list-input" type="radio" name="pay-card" value="" type="text">
+                                        <label for="card-4" class="refill__payment-card-list-label" style="background-image: url('{% static 'images/card-icon.svg' %}')"></label>
+                                    </li>
+                                </ul>
+                                <div class="refill__payment-cards-amount-inner">
+                                    <h5 class="refill__payment-cards-amount-title title-min">Сумма</h5>
+                                    <div class="refill__payment-cards-amount-container">
+                                        <input type="number" class="refill__payment-cards-amount" name="add-balance-input" form="add-balance">
+                                        <button type="submit" class="refill__payment-cards-amount-btn">Пополнить</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="refill__history refill-wrapper">
+                        <h5 class="refill__history-title title-min">
+                            История платежей
+                        </h5>
+                        <div class="refill__history-inner refill-inner">
+                            <div class="refill__history-header">
+                                <ul class="refill__history refill__history-list">
+                                    <li class="refill__history-header-list-item refill__history-list-item"><span class="refill__history-header-list-text" data-title="id">ID Платежа</span></li>
+                                    <li class="refill__history-header-list-item refill__history-list-item"><span class="refill__history-header-list-text" data-title="method">Метод</span></li>
+                                    <li class="refill__history-header-list-item refill__history-list-item"><span class="refill__history-header-list-text" data-title="sum">Сумма</span></li>
+                                    <li class="refill__history-header-list-item refill__history-list-item"><span class="refill__history-header-list-text" data-title="status">Статус</span></li>
+                                    <li class="refill__history-header-list-item refill__history-list-item"><span class="refill__history-header-list-text" data-title="created">Создано</span></li>
+                                    <li class="refill__history-header-list-item refill__history-list-item"><span class="refill__history-header-list-text" data-title="paid">Оплачено</span></li>
+                                </ul>
+                            </div>
+                            <div class="refill__history-body">
+                                 {% for h in hist %}
+                                <ul class="refill__history-body-list refill__history-list">
+                                    <li class="refill__history-body-list-item refill__history-list-item"><span class="refill__history-body-list-text" data-title="id">{{ h.payment_id }}</span></li>
+                                    <li class="refill__history-body-list-item refill__history-list-item"><span class="refill__history-body-list-text" data-title="method">{{ h.method }}</span></li>
+                                    <li class="refill__history-body-list-item refill__history-list-item"><span class="refill__history-body-list-text" data-title="sum">{{ h.amount }}</span></li>
+                                    <li class="refill__history-body-list-item refill__history-list-item"><span class="refill__history-body-list-text" data-title="status">{{ h.status }}</span></li>
+                                    <li class="refill__history-body-list-item refill__history-list-item"><span class="refill__history-body-list-text" data-title="created">{{ h.created_at }}</span></li>
+                                    <li class="refill__history-body-list-item refill__history-list-item"><span class="refill__history-body-list-text" data-title="paid">{{ h.paid_at }}</span></li>
+                                </ul>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

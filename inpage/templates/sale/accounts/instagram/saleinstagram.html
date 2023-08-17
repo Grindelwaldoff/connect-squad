@@ -1,0 +1,199 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{% static 'css/nullstyle.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    {% include 'blocktemplates/headers/header.html' %}
+    
+    <main class="main main-dicoration-conteiner">
+        <div class="section-all section-goods">
+            <div class="container">
+                <div class="goods-advertising__img-container">
+                    <a href="#" class="goods-advertising__link">
+                        <img src="{% static 'images/advertising-img.jpg' %}" alt="" class="goods-advertising__img">
+                    </a>
+                </div>
+                <div class="accounts-tabs__list-content-inner list-content__inner">
+                        <div class="mass-section__wrapper">
+                            <form method="post" class="mass-section__inner" action="." id="sale-instagram-form" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <h2 class="mass-purchase__title title">
+                                    Массовая загрузка Instagram аккаунтов
+                                </h2>
+                                <div class="mass-section__titles-block mass-section__content-block">
+                                    <div class="mass-section__items-container">
+                                        <ul class="check-list">
+                                            <li class="check-list__item item-block-title--margin"><h5 class="mass-section__content-block-titles">Заголовок (Русский)</h5></li>
+                                            <li class="check-list__item item-block-title--margin"><h5 class="mass-section__content-block-titles">Заголовок (English)</h5></li>
+                                        </ul>
+                                        <ul class="check-list">
+                                            <li class="check-list__item item-block-content--margin-top"><input type="text" name="sale-instagram-form-name-ru" class="mass-section__content-block-input check-list__input-text" form="sale-instagram-form"></li>
+                                            <li class="check-list__item item-block-content--margin-top"><input type="text" name="sale-instagram-form-name-en" class="mass-section__content-block-input check-list__input-text" form="sale-instagram-form"></li>
+                                            <li class="check-list__item item-block-content--margin-top check-item">
+                                                <label class="mass-section-input-check checked-label">
+                                                    <input class="mass-section-input-hidden input-hidden input-checked" name="auto_language_translation" type="checkbox">
+                                                    <span class="mass-section-input-check__text checked-label__span">Автоматически переводить заголовок на английский</span>
+                                                </label>
+    
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="mass-section__content-block">
+                                    <div class="mass-section__items-container">
+                                        <h5 class="mass-section__content-block-titles">Цена</h5>
+                                        <ul class="check-list">
+                                            <li class="check-list__item item-block-content--margin-top">
+                                                <div class="refill-popup__form-header-inner">
+                                                    <div class="refill-popup__form-amount header-popup-area-inner">
+                                                        <input type="number" name="sale-instagram-form-acc-price" class="refill-popup__form-amount-area header-popup-area">
+                                                    </div>
+                                                    <div class="all-select-container refill-popup__form-amount-currency header-popup-area-inner">
+                                                        <button class="all-select select-all-area select-no-multiple-choice" data-select="'select-all-area">
+                                                            <input type="text" data-id="1" name="RUB" class="input-hidden" value="Рубль — ₽">
+                                                            <p class="select-all-item">Рубль — ₽</p>
+                                                        </button>
+                                                        <ul class="select-all-list">
+                                                            <li class="select-all-list__item" data-name="RUB">Рубль — ₽</li>
+                                                            <li class="select-all-list__item" data-name="UAH">Гривна — ₴</li>
+                                                            <li class="select-all-list__item" data-name="KZT">Тенге — ₸</li>
+                                                            <li class="select-all-list__item" data-name="BYN">Бел. рубль — BYN</li>
+                                                            <li class="select-all-list__item" data-name="USD">Доллар — $</li>
+                                                            <li class="select-all-list__item" data-name="EUR">Евро — €</li>
+                                                            <li class="select-all-list__item" data-name="GBP">Фунт стерлингов — £</li>
+                                                            <li class="select-all-list__item" data-name="CNY">Юань — ¥</li>
+                                                            <li class="select-all-list__item" data-name="TRY">Турецкая лира — ₺</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="check-list__item item-block-content--margin-top">
+                                                <label class="mass-section-input-check checked-label">
+                                                    <input class="mass-section-input-hidden input-hidden input-checked" name="discount_for_user" type="checkbox">
+                                                    <span class="mass-section-input-check__text checked-label__span">Разрешить пользователям просить скидку</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="mass-section__content-block">
+                                    <div class="mass-section__items-inner">
+                                        <div class="mass-section__items-container">
+                                            <h5 class="mass-section__content-block-titles">Происхождение аккаунта</h5>
+                                            <ul class="mass-section__items-list-radio-list check-list radio-list">
+                                                <li class="check-list__item radio-list__item">
+                                                    <label class="radio-list__label sale-acc-input__content">
+                                                        <input type="radio" class="radio-list__input input-value input-hidden" name="acc-origin">
+                                                        <span class="radio-list__span-text">Брут</span>
+                                                    </label>
+                                                </li>
+                                                <li class="check-list__item radio-list__item">
+                                                    <label class="radio-list__label sale-acc-input__content">
+                                                        <input type="radio" class="radio-list__input input-value input-hidden" name="acc-origin">
+                                                        <span class="radio-list__span-text">Фишинг</span>
+                                                    </label>
+                                                </li>
+                                                <li class="check-list__item radio-list__item">
+                                                    <label class="radio-list__label sale-acc-input__content">
+                                                        <input type="radio" class="radio-list__input input-value input-hidden" name="acc-origin">
+                                                        <span class="radio-list__span-text">Стилер</span>
+                                                    </label>
+                                                </li>
+                                                <li class="check-list__item radio-list__item">
+                                                    <label class="radio-list__label sale-acc-input__content">
+                                                        <input type="radio" class="radio-list__input input-value input-hidden" name="acc-origin">
+                                                        <span class="radio-list__span-text">Личный</span>
+                                                    </label>
+                                                </li>
+                                                <li class="check-list__item radio-list__item">
+                                                    <label class="radio-list__label sale-acc-input__content">
+                                                        <input type="radio" class="radio-list__input input-value input-hidden" name="acc-origin">
+                                                        <span class="radio-list__span-text">Перепродажа</span>
+                                                    </label>
+                                                </li>
+                                                <li class="check-list__item radio-list__item">
+                                                    <label class="radio-list__label sale-acc-input__content">
+                                                        <input type="radio" class="radio-list__input input-value input-hidden" name="acc-origin">
+                                                        <span class="radio-list__span-text">Авторег</span>
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mass-section__content-block">
+                                    <div class="mass-section__items-container">
+                                        <h5 class="mass-section__content-block-titles">Доступ к почте</h5>
+                                        <ul class="mass-section__items-list-check-list check-list">
+                                            <li class="check-list__item item-block-content--margin-top">
+                                                <input type="text" name="sale-instagram-form-mailpass" placeholder="Email:password" class="mass-section__content-block-input check-list__input-text" form="sale-instagram-form">
+                                            </li>
+                                            <li class="check-list__item item-block-content--margin-top">
+                                                <ul class="mass-section__items-list-radio-list check-list radio-list mail-radio-check">
+                                                    <li class="check-list__item radio-list__item">
+                                                        <label class="radio-list__label sale-acc-input__content">
+                                                            <input type="radio" class="radio-list__input input-value input-hidden" name="acces-mail">
+                                                            <span class="radio-list__span-text">Родная</span>
+                                                        </label>
+                                                    </li>
+                                                    <li class="check-list__item radio-list__item">
+                                                        <label class="radio-list__label sale-acc-input__content">
+                                                            <input type="radio" class="radio-list__input input-value input-hidden" name="acces-mail">
+                                                            <span class="radio-list__span-text">Авторег</span>
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="mass-section__content-block">
+                                    <div class="mass-section__items-container">
+                                        <h5 class="mass-section__content-block-titles">Описание товара</h5>
+                                        <ul class="mass-section__items-list-check-list check-list">
+                                            <li class="check-list__item">
+                                                <textarea class="check-list__item-textarea" name="sale-acc-desriptions" form="sale-instagram-form"></textarea>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="mass-section__content-block">
+                                    <div class="mass-section__items-container">
+                                        <h5 class="mass-section__content-block-titles">Информация для покупателя</h5>
+                                        <ul class="mass-section__items-list-check-list check-list">
+                                            <li class="check-list__item">
+                                                <textarea class="check-list__item-textarea" name="info_for_buyer"></textarea>
+                                            </li>
+                                            <li class="check-list__item">
+                                                <p class="check-list__text-buyer-descr">Этот текст увидит покупатель только после покупки.</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="mass-section__content-block">
+                                    <div class="mass-section__items-inner">
+    
+                                        <div class="mass-section__content-block-footer content-block-footer">
+                                            <button class="content-block-footer-btn item-block-content--margin-left" type="submit">Поставить аккаунты в очередь</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>    
+                </div>
+             </div>
+    </main>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/acc-scripts.js' %}"></script>
+</body>
+</html> 
+
+

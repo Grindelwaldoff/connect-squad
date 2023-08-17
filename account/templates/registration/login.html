@@ -1,0 +1,38 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "css/nullstyle.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <title>Login</title>
+</head>
+<body>
+    {% include 'blocktemplates/headers/header.html' %}
+    <main class="main-content">
+        <div class="container">
+            <form class="login-form acc-form" action="{% url 'login' %}" method="post" id="login-form">
+                {% csrf_token %}
+
+                <div class="login-form__logo form__logo">
+                    <img class="form__logo-img" src="{% static 'images/logoza-logo.svg' %}" alt="">
+                    <img src="{% static 'images/logo-text-img.svg' %}" alt="" class="form__logo-img-text">
+                </div>
+                <h6 class="form__title">Войдите в свой аккаунт</h6>
+                <ul class="form__areas-list">
+                    <li class="form__areas-item"><input type="text" name="{{ form.username.html_name }}" id="{{ form.username.auto_id }}" class="form__areas-input" form="login-form"></li>
+                    <li class="form__areas-item"><input type="password" name="{{ form.password.html_name }}" id="{{ form.password.auto_id }}" class="form__areas-input" form="login-form"></li>
+                    <li class="form__areas-item"><button type="submit" class="form__areas-btn">Войти</button></li>
+                </ul>
+                <div class="form__link">
+                    <a href="{% url "register" %}" class="form__link-item">Регистрация</a>
+                </div>
+            </form>
+        </div>
+    </main>
+    <script src="{% static "js/main.js" %}"></script>
+</body>
+</html>

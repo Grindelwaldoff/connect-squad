@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/nullstyle.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="page-marcet__header" style="background-image: url('images/header-bg.jpg');">
+        <div class="page-marcet__header-inner">
+            <div class="page-marcet__header-column">
+                <a class="page-marcet__header-logo-container" href="index.html">
+                    <picture><source srcset="images/logoza-logo.svg" type="image/webp"><img class="page-marcet__header-logo-img" src="images/logoza-logo.svg" alt="Логотип"></picture>
+                    <picture><source srcset="images/logo-text.webp" type="image/webp"><img class="page-marcet__header-logo-img-text"src="images/logo-text.png" alt=""></picture>
+                </a>
+            </div>
+            <div class="page-marcet__header-column page-marcet__header-column-menu">
+                <div class="page-marcet__header-top">
+                    <nav class="page-marcet__menu">
+                        <ul class="page-marcet__menu-list">
+                            <li class="page-marcet__menu-item"><a class="page-marcet__menu-link" href="#">Каталог товаров</a></li>
+                            <li class="page-marcet__menu-item"><a class="page-marcet__menu-link" href="#">Report</a></li>
+                            <li class="page-marcet__menu-item"><a class="page-marcet__menu-link" href="#">Загрузка аккаунтов</a></li>
+                            <li class="page-marcet__menu-item"><a class="page-marcet__menu-link" href="#">Контакты</a></li>
+                            <li class="page-marcet__menu-item"><a class="page-marcet__menu-link" href="#">Правила</a></li>
+                            <li class="page-marcet__menu-item"><a class="page-marcet__menu-link" href="#">Контакты</a></li>
+                            <li class="page-marcet__menu-item"><a class="page-marcet__menu-link" href="#">Правила</a></li>
+                            <li class="page-marcet__menu-item"><a class="page-marcet__menu-link --notification" href="#">Уведомления</a></li>
+                            <li class="page-marcet__menu-item"><a class="page-marcet__menu-link --help" href="#">Помощь</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="page-marcet__header-bottom">
+                    <div class="page-marcet__header-search">
+                        <span class="search-icon"></span>
+                        <input type="text" placeholder="Поиск..." class="page-marcet__header-search-area">
+                    </div>
+                    <div class="page-marcet__header-wallet">
+                        <span class="page-marcet__header-wallet-value">0,00</span>
+                        <span class="page-marcet__header-wallet-value">руб</span>
+                    </div>
+                    <div class="page-marcet__header-user-account">
+                        <a href="login-page.html" class="page-marcet__header-user-account-link"></a>
+                    </div>
+                    <div class="page-marcet__header-basket">
+                        <button class="page-marcet__header-basket-btn"></button>
+                    </div>
+                    <a href="#" class="page-marcet__header-last-orders"></a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="main main-dicoration-conteiner">
+        <div class="section-all section-goods">
+            <div class="container">
+                <div class="goods-advertising__img-container">
+                    <a href="#" class="goods-advertising__link">
+                        <img src="images/advertising-img.jpg" alt="" class="goods-advertising__img">
+                    </a>
+                </div>
+                <div class="refill__wrapper">
+                    <div class="title-wrapper">
+                        <h2 class="refill__title">Настройки аккаунта</h2>
+                    </div>
+                    <div class="refill__inner">
+                        <form class="refill__payment settings-column">
+                            <div class="refill__payment-wrapper refill-wrapper">
+                                <div class="settings__email">
+                                    <input class="settings__email-cрange" placeholder="Email:" type="text">
+                                    <button class="settings__email-cрange-btn">изменить email</button>
+                                </div>
+                                <div class="settings__pass">
+                                    <ul class="settings__pass pass__list">
+                                        <li class="pass__list-item">
+                                            <span class="pass__list-item-text">
+                                                Текущий пароль
+                                            </span>
+                                            <input id="card" class="pass__list-input" type="password" name="pay-card" value="" type="text">
+                                        </li>
+                                        <li class="pass__list-item">
+                                            <span class="pass__list-item-text">
+                                                Новый пароль
+                                            </span>
+                                            <input id="card-2" class="pass__list-input" type="password" name="pay-card" value="" type="text">
+                                        </li>
+                                        <li class="pass__list-item">
+                                            <span class="pass__list-item-text">
+                                                Повторите новый пароль
+                                            </span>
+                                            <input id="card-3" class="pass__list-input" type="password" name="pay-card" value="" type="text">
+                                        </li>
+                                    </ul>
+                                    <button class="settings-pass__save">Сохранить</button>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="settings-column">
+                            <div class="settings__API settings-column-block refill-wrapper">
+                                <h5 class="settings__API-title title-min">
+                                    Ключ API
+                                </h5>
+                                <div class="settings__API-inner">
+                                    <div class="settings__API-area refill-inner">
+                                        <input type="password" class="settings__API-input" value="43482478e562837463756746587436">
+                                        <div class="settings__API-btn-panel">
+                                            <button class="settings__API-btn settings__API-btn-show"></button>
+                                            <button class="settings__API-btn settings__API-btn-text">Копировать</button>
+                                            <button class="settings__API-btn settings__API-btn-text">Сменить</button>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="settings__API-text">
+                                        Не передавайте ключ API третьим лицам!
+                                    </div>
+                                </div>
+                            </div>
+                            <form class="settings-column-block refill-wrapper">
+                                <div class="settings__API-text settings__API-text-check">
+                                    Показывать дополнительную информацию в файле заказов
+                                    <input id="settings-check" class="settings__API-check-input" type="checkbox">
+                                    <label for="settings-check" class="settings__API-check"></label>
+                                </div>
+                                <button class="settings__save settings-pass__save">Сохранить</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{% static 'css/nullstyle.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    {% include 'blocktemplates/headers/header.html' %}
+
+    <main class="main-content">
+        <div class="container">
+            <form class="login-form acc-form" action="/account/login/" method="post" id="login-form">
+                <input type="hidden" name="csrfmiddlewaretoken" value="youHCv75BILvqlF68vWpoIbgbQoOmsKPeQLMgmmcYiIhapyjYafOI6wgI2eIgITo">
+
+                <div class="login-form__logo form__logo">
+                    <img class="form__logo-img" src="/static/images/logoza-logo.svg" alt="">
+                    <img src="/static/images/logo-text-img.svg" alt="" class="form__logo-img-text">
+                </div>
+                <h6 class="reg-success_title">Регистрация прошла успешно!</h6>
+
+                <a href="{% url 'login' %}" class="form__areas-btn reg-success_title-link">Войти</a>
+            </form>
+        </div>
+    </main>
